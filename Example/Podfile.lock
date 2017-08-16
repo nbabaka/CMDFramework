@@ -1,0 +1,19 @@
+PODS:
+  - CMDFramework (0.1.0)
+  - EasyPeasy (1.4.2)
+
+DEPENDENCIES:
+  - CMDFramework (from `../`)
+  - EasyPeasy
+
+EXTERNAL SOURCES:
+  CMDFramework:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CMDFramework: b052e8884b2e2a88ae1c8780ca32c67ae270a2f4
+  EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
+
+PODFILE CHECKSUM: 08e1075e56cd03091547d26757e56e4f0d3c9f84
+
+COCOAPODS: 1.2.1

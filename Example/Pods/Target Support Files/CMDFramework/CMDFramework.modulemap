@@ -1,0 +1,6 @@
+framework module CMDFramework {
+  umbrella header "CMDFramework-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'CMDFramework'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of CMDFramework.'
+  s.summary          = 'CINEMOOD IOS Application Framework'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -24,14 +24,19 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/nbabaka/CMDFramework'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'nbabaka' => 'babaka@cinemood.com' }
+  s.author           = { 'Nikolay Karataev aka Babaka' => 'babaka@cinemood.com' }
   s.source           = { :git => 'https://github.com/nbabaka/CMDFramework.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
+  s.watchos.deployment_target = '3.1'
+  s.tvos.deployment_target = '10.0'
 
   s.source_files = 'CMDFramework/Classes/**/*'
-  
+  s.frameworks = 'UIKit'
+  s.dependency 'EasyPeasy'
+  s.source_files = 'MyFramework/Classes/*.{swift}'
+
   # s.resource_bundles = {
   #   'CMDFramework' => ['CMDFramework/Assets/*.png']
   # }

@@ -29,17 +29,14 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
-  s.watchos.deployment_target = '3.1'
-  s.tvos.deployment_target = '10.0'
 
   s.source_files = 'CMDFramework/Classes/**/*'
   s.frameworks = 'UIKit'
   s.dependency 'EasyPeasy'
-  s.source_files = 'MyFramework/Classes/*.{swift}'
 
-  # s.resource_bundles = {
-  #   'CMDFramework' => ['CMDFramework/Assets/*.png']
-  # }
+  s.resource_bundles = {
+     'CMDFramework' => ['CMDFramework/Classes/*.ttf']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

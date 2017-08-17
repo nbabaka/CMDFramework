@@ -35,10 +35,11 @@ TODO: Add long description of the pod here.
   s.dependency 'EasyPeasy'
 
   s.resource_bundles = {
-     'CMDFramework' => ['CMDFramework/Classes/*.ttf']
+     'CMDFramework' => ['CMDFramework/Assets/*.xcassets']
   }
+  s.resources = ['CMDFramework/Assets/*.xcassets' , 'CMDFramework/*.strings']
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+# s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

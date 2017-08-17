@@ -26,10 +26,6 @@ public extension UIColor {
             return UIColor(red: 85/255.0, green: 85/255.0, blue: 93/255.0, alpha: 1.0)
         }
         
-        public static var redButton: UIColor {
-            return UIColor(red: 230/255.0, green: 13/255.0, blue: 67/255.0, alpha: 1.0)
-        }
-        
         public static var blueButton: UIColor {
             return UIColor(red:40/255.0, green:146/255.0, blue:211/255.0,  alpha:1)
         }
@@ -96,18 +92,117 @@ public extension UIColor {
             return UIColor(red: 160/255.0, green: 163/255.0, blue: 179/255.0, alpha: 1.0)
         }
         
-        static var sectorLabelTextColor: UIColor {
+        public static var sectorLabelTextColor: UIColor {
             return UIColor(red: 70/255.0, green: 70/255.0, blue: 80/255.0, alpha: 1.0)
         }
         
-        static var insetLabelBorder: UIColor {
+        public static var insetLabelBorder: UIColor {
             return UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1.0)
         }
         
-        static var insetLabelBackground: UIColor {
+        public static var insetLabelBackground: UIColor {
             return UIColor(red: 45/255.0, green: 45/255.0, blue: 53/255.0, alpha: 1.0)
         }
     }
+    
+    public struct buttons {
+        public static var blueButtonBackground: UIColor {
+            return UIColor(red: 40.0 / 255.0, green: 146.0 / 255.0, blue: 211.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var blueButtonBackgroundHighlight: UIColor {
+            return UIColor(red: 0.0, green: 153.0 / 255.0, blue: 212.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var blueButtonBackgroundDisabled: UIColor {
+            return UIColor(red: 55.0 / 255.0, green: 55.0 / 255.0, blue: 66.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var blueButtonTitle: UIColor {
+            return UIColor(red: 212.0 / 255.0, green: 233.0 / 255.0, blue: 246.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var blueButtonTitleHighlight: UIColor {
+            return UIColor.white
+        }
+        
+        public static var blueButtonTitleDisabled: UIColor {
+            return UIColor(red: 64/255.0, green: 64/255.0, blue: 67/255.0, alpha: 1.0)
+        }
+        
+        public static var blueButtonShadow: UIColor {
+            return UIColor(red: 17.0 / 255.0, green: 134.0 / 255.0, blue: 207.0 / 255.0, alpha: 0.5)
+        }
+        
+        public static var classicButtonTitle: UIColor {
+            return UIColor(red: 91.0 / 255.0, green: 93.0 / 255.0, blue: 110.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var classicButtonTitleHightlight: UIColor {
+            return UIColor(red: 195.0 / 255.0, green: 199.0 / 255.0, blue: 217.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var backButtonTitle: UIColor {
+            return UIColor(red: 195.0 / 255.0, green: 199.0 / 255.0, blue: 217.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var grayButtonBackground: UIColor {
+            return UIColor(red: 55.0 / 255.0, green: 55.0 / 255.0, blue: 66.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var grayButtonBackgroundHighlight: UIColor {
+            return UIColor(red: 55.0 / 255.0, green: 55.0 / 255.0, blue: 66.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var grayButtonShadow: UIColor {
+            return UIColor(red: 55.0 / 255.0, green: 55.0 / 255.0, blue: 66.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var grayButtonTitle: UIColor {
+            return UIColor(red: 167.0 / 255.0, green: 170.0 / 255.0, blue: 187.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var grayButtonTitleHighlight: UIColor {
+            return UIColor.white
+        }
+        
+        public static var rightImageTitle: UIColor {
+            return UIColor(white: 111.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var rightImageTint: UIColor {
+            return UIColor(white: 111.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var colorButtonBackground: UIColor {
+            return UIColor(red: 45/255.0, green: 45/255.0, blue: 53/255.0, alpha: 1.0)
+        }
+        
+        public static var colorButtonBackgroundHighlight: UIColor {
+            return UIColor(red: 174/255.0, green: 174/255.0, blue: 186/255.0, alpha: 1.0)
+        }
+        
+        public static var colorButtonTint: UIColor {
+            return UIColor(red: 20/255.0, green: 20/255.0, blue: 24/255.0, alpha: 1.0)
+        }
+        
+        public static var colorButtonTitleHighlight: UIColor {
+            return UIColor(red: 20/255.0, green: 20/255.0, blue: 24/255.0, alpha: 1.0)
+        }
+        
+        public static var colorButtonTitle: UIColor {
+            return UIColor(red: 114/255.0, green: 114/255.0, blue: 127/255.0, alpha: 1.0)
+        }
+        
+        public static var redButtonBackground: UIColor {
+            return UIColor(red: 230/255.0, green: 13/255.0, blue: 67/255.0, alpha: 1.0)
+        }
+        
+        public static var redButtonTitle: UIColor {
+            return UIColor(red: 230/255.0, green: 13/255.0, blue: 67/255.0, alpha: 1.0)
+        }
+    }
+    
     
     public struct textWidgets {
         public static var activeText: UIColor {

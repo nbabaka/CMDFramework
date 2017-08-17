@@ -27,6 +27,21 @@ public extension UIFont {
         }
     }
     
+    public struct buttons {
+        public static var blueButton: UIFont {
+            return UIFont(name: "GothamPro-Black", size: 18.0)!
+        }
+        
+        public static var classicButton: UIFont {
+            return UIFont(name: "GothamPro-Black", size: 16.0)!
+        }
+        
+        public static var colorButton: UIFont {
+            return UIFont(name: "GothamPro-Bold", size: 18.0)!
+        }
+    }
+    
+    
     public struct chat {
         public static var timestamp: UIFont {
             return UIFont(name: "GothamPro-Light", size: 11.0)!

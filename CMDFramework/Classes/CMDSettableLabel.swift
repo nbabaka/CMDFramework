@@ -53,12 +53,14 @@ open class CMDSettableLabel: CMDLabelBase {
         self.textColor = myColor
         self.addTextSpacing(mySpacing)
     }
-    
-    open func addTextSpacing(_ spacing : Float) {
+}
+
+public extension UILabel {
+    public func addTextSpacing(_ spacing : Float) {
         attributedText = getAttributedStringWithSpacing(spacing)
     }
     
-    open func adjustFontSizeToFit(spacing: Float, minimumFontSize : CGFloat, maximumFontSize : CGFloat? = nil) {
+    public func adjustFontSizeToFit(spacing: Float, minimumFontSize : CGFloat, maximumFontSize : CGFloat? = nil) {
         let maxFontSize = maximumFontSize ?? font.pointSize
         for size in stride(from: maxFontSize, to: minimumFontSize, by: -CGFloat(0.1)) {
             let proposedFont = font.withSize(size)

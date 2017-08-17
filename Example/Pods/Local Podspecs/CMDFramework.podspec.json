@@ -1,22 +1,46 @@
 {
   "name": "CMDFramework",
-  "version": "0.1.0",
-  "summary": "A short description of CMDFramework.",
+  "version": "0.2.4",
+  "summary": "CINEMOOD IOS Application Framework",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/nbabaka/CMDFramework",
+  "homepage": "https://cinemood.com",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "nbabaka": "babaka@cinemood.com"
+    "Nikolay Karataev aka Babaka": "babaka@cinemood.com"
   },
   "source": {
-    "git": "https://github.com/nbabaka/CMDFramework.git",
-    "tag": "0.1.0"
+    "git": "ssh://git@stash.dev.cinemood.com:7999/cma/cinemood-ios-framework.git",
+    "tag": "0.2.4"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "source_files": "CMDFramework/Classes/**/*"
+  "source_files": "CMDFramework/Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "EasyPeasy": [
+
+    ],
+    "libPhoneNumber-iOS": [
+
+    ],
+    "SDWebImage": [
+
+    ],
+    "Restofire": [
+
+    ]
+  },
+  "resource_bundles": {
+    "CMDFramework": [
+      "CMDFramework/Assets/*.xcassets"
+    ]
+  },
+  "resources": [
+    "CMDFramework/Assets/*.xcassets",
+    "CMDFramework/*.strings"
+  ]
 }

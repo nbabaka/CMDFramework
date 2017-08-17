@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CMDFramework'
-  s.version          = '0.2.3'
+  s.version          = '0.2.4'
   s.summary          = 'CINEMOOD IOS Application Framework'
 
 # This description is used to generate tags and improve search results.
@@ -21,8 +21,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/nbabaka/CMDFramework'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://cinemood.com'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Nikolay Karataev aka Babaka' => 'babaka@cinemood.com' }
   s.source           = { :git => 'ssh://git@stash.dev.cinemood.com:7999/cma/cinemood-ios-framework.git', :tag => s.version.to_s }
@@ -33,13 +32,13 @@ TODO: Add long description of the pod here.
   s.source_files = 'CMDFramework/Classes/**/*'
   s.frameworks = 'UIKit'
   s.dependency 'EasyPeasy'
+  s.dependency 'libPhoneNumber-iOS'
+  s.dependency 'SDWebImage'
+  s.dependency 'Restofire'
 
   s.resource_bundles = {
      'CMDFramework' => ['CMDFramework/Assets/*.xcassets']
   }
   s.resources = ['CMDFramework/Assets/*.xcassets' , 'CMDFramework/*.strings']
 
-# s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

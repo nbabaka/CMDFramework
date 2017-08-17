@@ -41,6 +41,20 @@ public extension UIFont {
         }
     }
     
+    public struct textFields {
+        public static var validationField: UIFont {
+            return UIFont(name: "GothamPro-Black", size: 18.0)!
+        }
+        
+        public static var placeholder: UIFont {
+            return UIFont(name: "GothamPro-Bold", size: 18.0)!
+        }
+        
+        public static var text: UIFont {
+            return UIFont(name: "GothamPro-Bold", size: 18.0)!
+        }
+
+    }
     
     public struct chat {
         public static var timestamp: UIFont {
@@ -59,17 +73,7 @@ public extension UIFont {
             return UIFont(name: "GothamPro-Light", size: 13.0)!
         }
     }
-    
-    public struct textWidgets {
-        public static var placeholder: UIFont {
-            return UIFont(name: "GothamPro-Bold", size: 18.0)!
-        }
-        
-        public static var text: UIFont {
-            return UIFont(name: "GothamPro-Bold", size: 18.0)!
-        }
-    }
-    
+
     public struct widgets {
         public static var loadingLabel: UIFont {
             return UIFont(name: "GothamPro-Light", size: 12.0)!

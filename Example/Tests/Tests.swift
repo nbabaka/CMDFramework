@@ -1,6 +1,7 @@
 import UIKit
 import XCTest
 import CMDFramework
+import libPhoneNumber_iOS
 
 class Tests: XCTestCase {
     

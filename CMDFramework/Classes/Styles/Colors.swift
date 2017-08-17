@@ -204,7 +204,7 @@ public extension UIColor {
     }
     
     
-    public struct textWidgets {
+    public struct textFields {
         public static var activeText: UIColor {
             return UIColor(red: 20/255.0, green: 20/255.0, blue: 24/255.0, alpha: 1.0)
         }
@@ -227,6 +227,18 @@ public extension UIColor {
         
         public static var nonActivePlaceholder: UIColor {
             return UIColor(red: 82/255.0, green: 85/255.0, blue: 98/255.0, alpha: 1.0)
+        }
+        
+        public static var validationLabel: UIColor {
+            return UIColor(red: 230.0 / 255.0, green: 13.0 / 255.0, blue: 67.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var phoneFieldBorder: UIColor {
+            return UIColor(red: 82.0 / 255.0, green: 85.0 / 255.0, blue: 98.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var codeFieldText: UIColor {
+             return UIColor(red: 20.0 / 255.0, green: 20.0 / 255.0, blue: 24.0 / 255.0, alpha: 1.0)
         }
     }
     

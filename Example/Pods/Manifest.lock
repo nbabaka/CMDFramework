@@ -1,19 +1,39 @@
 PODS:
-  - CMDFramework (0.1.0)
+  - Alamofire (4.4.0)
+  - CMDFramework (0.2.4):
+    - EasyPeasy
+    - libPhoneNumber-iOS
+    - Restofire
+    - SDWebImage
   - EasyPeasy (1.4.2)
+  - libPhoneNumber-iOS (0.9.10)
+  - Restofire (2.2.0):
+    - Restofire/Core (= 2.2.0)
+  - Restofire/Core (2.2.0):
+    - Alamofire (~> 4.4.0)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
 
 DEPENDENCIES:
   - CMDFramework (from `../`)
   - EasyPeasy
+  - libPhoneNumber-iOS
+  - Restofire
+  - SDWebImage
 
 EXTERNAL SOURCES:
   CMDFramework:
     :path: ../
 
 SPEC CHECKSUMS:
-  CMDFramework: b052e8884b2e2a88ae1c8780ca32c67ae270a2f4
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  CMDFramework: 8d4d39bcab712a234db7f06a9e3ad1a121b31223
   EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
+  libPhoneNumber-iOS: f721ae4d5854bce60934f9fb9b0b28e8e68913cb
+  Restofire: 87dd3c625291e3e73decf5ae53c4d176d2016776
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
 
-PODFILE CHECKSUM: 08e1075e56cd03091547d26757e56e4f0d3c9f84
+PODFILE CHECKSUM: 93026f65c36f5cca34eb617823d95e1647d37a95
 
 COCOAPODS: 1.2.1

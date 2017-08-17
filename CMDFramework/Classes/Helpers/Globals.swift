@@ -39,4 +39,16 @@ public func calculateSpacingWithDevice(fromValue spacing: Float) -> Float {
     return spacing
 }
 
+public func getImageFromUrl(_ url: String, onComplete: @escaping (UIImage?) -> Void) {
+    DispatchQueue.global(qos: .background).async {
+        guard let url = URL(string: url) else {
+            onComplete(nil)
+            return
+        }
+        let data = try? Data(contentsOf: url)
+        DispatchQueue.main.async {
+            onComplete((data != nil) ? UIImage(data: data!) : nil)
+        }
+    }
+}
 

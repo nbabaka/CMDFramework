@@ -27,8 +27,8 @@ open class CMDColoredTextInput: CMDTextInput, UITextFieldDelegate {
     }
 }
 
-extension UITextField {
-    func checkAndSetActiveStatus(_ status: Bool) {
+public extension UITextField {
+    public func checkAndSetActiveStatus(_ status: Bool) {
         guard let colored = self as? CMDColoredTextInput else {
             return
         }

@@ -17,17 +17,17 @@ open class CMDCodeField: BaseView, UITextFieldDelegate {
     let countOfFields : Int = 4
     let limitCount = 1
     
-    var fieldsArray = [CMDTextInput]()
-    var validLabel = CMDSettableLabel()
-    var isValid = true
+    public var fieldsArray = [CMDTextInput]()
+    public var validLabel = CMDSettableLabel()
+    public var isValid = true
     
-    var code: String? {
+    public var code: String? {
         let textArray = fieldsArray.map {$0.text} as! [String]
         let text = textArray.joined()
         return text.characters.count == countOfFields ? text : nil
     }
     
-    var countOfSpacing: Int {
+    public var countOfSpacing: Int {
         return countOfFields - 1
     }
     

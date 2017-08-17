@@ -83,7 +83,7 @@ open class CMDPhoneField: CMDTextInputWithValidation {
         setNeedsDisplay()
     }
     
-    internal func tryToChangeFlag(withParsedNumber number: NBPhoneNumber?) {
+    public func tryToChangeFlag(withParsedNumber number: NBPhoneNumber?) {
         guard number != nil else {
             return
         }

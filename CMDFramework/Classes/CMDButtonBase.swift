@@ -9,7 +9,7 @@
 public typealias CMDButtonBlock = () -> Void
 open class CMDButtonBase : UIButton {
     open var onPushButtonBlock : CMDButtonBlock?
-    internal var spacing : Float = 4
+    open var spacing : Float = 4
     override init(frame: CGRect) {
         super.init(frame: frame)
         initButton()

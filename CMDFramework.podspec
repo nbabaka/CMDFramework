@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CMDFramework'
-  s.version          = '0.2.7'
+  s.version          = '0.3.0'
   s.summary          = 'CINEMOOD IOS Application Framework'
 
 # This description is used to generate tags and improve search results.
@@ -29,13 +29,15 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'CMDFramework/Classes/**/*'
+  s.source_files = 'CMDFramework/Framework/**/*'
   s.frameworks = 'UIKit'
   s.dependency 'EasyPeasy'
   s.dependency 'libPhoneNumber-iOS'
   s.dependency 'SDWebImage'
   s.dependency 'Restofire'
   s.dependency 'SSZipArchive'
+  s.dependency 'SwiftyJSON', '~> 3.1'
+  s.dependency 'PKHUD'
 
   s.resource_bundles = {
     'Assets' => ['CMDFramework/Assets/*.xcassets'],

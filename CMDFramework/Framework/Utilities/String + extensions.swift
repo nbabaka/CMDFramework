@@ -8,6 +8,19 @@
 
 import Foundation
 
+public extension Bool {
+    public init?(string: String) {
+        switch string {
+        case "True", "true", "yes", "1":
+            self = true
+        case "False", "false", "no", "0":
+            self = false
+        default:
+            return nil
+        }
+    }
+}
+
 public extension String {
     public var l:String {
         get {

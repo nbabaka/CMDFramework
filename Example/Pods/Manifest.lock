@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
-  - CMDFramework (0.2.5):
+  - CMDFramework (0.2.7):
     - EasyPeasy
     - libPhoneNumber-iOS
     - Restofire
@@ -31,7 +31,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  CMDFramework: 0be063b9e657ce44bc70783a0b687b3d91747d5b
+  CMDFramework: 3f880fed4f2f49c3a7661c0ecd8da15e69d18783
   EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
   libPhoneNumber-iOS: f721ae4d5854bce60934f9fb9b0b28e8e68913cb
   Restofire: 87dd3c625291e3e73decf5ae53c4d176d2016776

@@ -16,12 +16,12 @@ public enum CMDDropListItemAction {
 public typealias CMDDropListItemBlock = () -> Void
 
 open class CMDDropListItem: BaseView {
-    let inactiveTextColor: UIColor = UIColor(red: 156/255.0, green: 159/255.0, blue: 174/255.0, alpha: 1.0)
-    let activeTextColor: UIColor = UIColor(red: 82/255.0, green: 85/255.0, blue: 98/255.0, alpha: 1.0)
-    var action: CMDDropListItemAction = .select
-    var isSelect: Bool = false
-    var identifier: String?
-    var closure: CMDDropListItemBlock?
+    open var inactiveTextColor = UIColor.dropList.nonActiveTextItem
+    open var activeTextColor = UIColor.dropList.activeTextItem
+    open var action: CMDDropListItemAction = .select
+    open var isSelect: Bool = false
+    open var identifier: String?
+    open var closure: CMDDropListItemBlock?
     
     override open func initSubviews() {
         super.initSubviews()

@@ -52,3 +52,8 @@ public func getImageFromUrl(_ url: String, onComplete: @escaping (UIImage?) -> V
     }
 }
 
+public func getBundleFilePath(bundle: String) -> String? {
+    let path = Bundle(for: BaseView.self).path(forResource: bundle, ofType: "bundle")
+    return path
+}
+

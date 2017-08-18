@@ -17,7 +17,7 @@ public extension String {
     
     public var podLocalization: String {
         get {
-            let path = Bundle(for: BaseView.self).path(forResource: "Localization", ofType: "bundle")
+            let path = getBundleFilePath(bundle: "Localization")
             let bundle = Bundle(path: path!) ?? Bundle.main
             return NSLocalizedString(self, bundle: bundle, comment: self)
         }

@@ -48,19 +48,6 @@ public extension UIImageView {
         }
     }
     
-    private func getBundleFilePath(bundle: String) -> String? {
-        guard let bundleID = Bundle.main.bundleIdentifier else {
-            return nil
-        }
-        guard let fileBundle = Bundle.init(identifier: bundleID) else {
-            return nil
-        }
-        guard let filePath = fileBundle.path(forResource: bundle, ofType: "bundle") else {
-            return nil
-        }
-        return filePath
-    }
-    
     private func returnImage(_ image: UIImage?, withReverse: Bool) -> UIImage? {
         guard let trueImage = image else {
             return nil

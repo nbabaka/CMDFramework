@@ -259,6 +259,18 @@ public extension UIColor {
         public static var nonActiveBackground: UIColor {
             return UIColor(red: 45/255.0, green: 45/255.0, blue: 53/255.0, alpha: 1.0)
         }
+        
+        public static var separator: UIColor {
+            return UIColor(red: 82/255.0, green: 85/255.0, blue: 98/255.0, alpha: 1.0)
+        }
+        
+        public static var nonActiveTextItem: UIColor {
+            return UIColor(red: 156/255.0, green: 159/255.0, blue: 174/255.0, alpha: 1.0)
+        }
+        
+        public static var activeTextItem: UIColor {
+            return UIColor(red: 82/255.0, green: 85/255.0, blue: 98/255.0, alpha: 1.0)
+        }
     }
     
     public struct padColors {

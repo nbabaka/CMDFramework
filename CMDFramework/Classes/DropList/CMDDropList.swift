@@ -10,13 +10,16 @@ import EasyPeasy
 
 open class CMDDropList: UIButton {
     // Constants
-    let animationTime = 0.4
-    let inactiveBackgroundColor = UIColor.dropList.nonActiveBackground
-    let activeBackgroundColor = UIColor.dropList.activeBackground
-    let separatorColor = UIColor(red: 82/255.0, green: 85/255.0, blue: 98/255.0, alpha: 1.0)
     let dropImage: UIImage = #imageLiteral(resourceName: "dropdown")
     let itemsDrop: Int = Dimensions.dropList.itemsDrop
-    let tableviewBottomMargin: CGFloat = Dimensions.dropList.tableviewBottomMargin
+    
+    // Styles
+    
+    public var animationTime = 0.4
+    public var inactiveBackgroundColor = UIColor.dropList.nonActiveBackground
+    public var activeBackgroundColor = UIColor.dropList.activeBackground
+    public var separatorColor = UIColor.dropList.separator
+    public var tableviewBottomMargin: CGFloat = Dimensions.dropList.tableviewBottomMargin
     
     // Views
     open var dropImageView: UIImageView?

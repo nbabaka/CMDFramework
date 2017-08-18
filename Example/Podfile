@@ -5,6 +5,7 @@ target 'CMDFramework_Tests' do
   pod 'libPhoneNumber-iOS'
   pod 'Restofire'
   pod 'SDWebImage'
+  pod 'SSZipArchive'
 
   post_install do |installer|
       installer.pods_project.targets.each do |target|

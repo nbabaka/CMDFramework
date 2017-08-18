@@ -16,6 +16,6 @@ open class CMDGrayButton: CMDBlueButton {
         self.setTitleColor(UIColor.buttons.grayButtonTitle, for: .normal)
         self.setTitleColor(UIColor.buttons.grayButtonTitleHighlight, for: .highlighted)
         self.spacing = 4
-        self.text = "NEXT".l
+        self.text = "NEXT".podLocalization
     }
 }

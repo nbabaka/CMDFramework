@@ -1,10 +1,11 @@
 PODS:
   - Alamofire (4.4.0)
-  - CMDFramework (0.2.4):
+  - CMDFramework (0.2.5):
     - EasyPeasy
     - libPhoneNumber-iOS
     - Restofire
     - SDWebImage
+    - SSZipArchive
   - EasyPeasy (1.4.2)
   - libPhoneNumber-iOS (0.9.10)
   - Restofire (2.2.0):
@@ -14,6 +15,7 @@ PODS:
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
+  - SSZipArchive (2.0.3)
 
 DEPENDENCIES:
   - CMDFramework (from `../`)
@@ -21,6 +23,7 @@ DEPENDENCIES:
   - libPhoneNumber-iOS
   - Restofire
   - SDWebImage
+  - SSZipArchive
 
 EXTERNAL SOURCES:
   CMDFramework:
@@ -28,12 +31,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  CMDFramework: 8d4d39bcab712a234db7f06a9e3ad1a121b31223
+  CMDFramework: 0be063b9e657ce44bc70783a0b687b3d91747d5b
   EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
   libPhoneNumber-iOS: f721ae4d5854bce60934f9fb9b0b28e8e68913cb
   Restofire: 87dd3c625291e3e73decf5ae53c4d176d2016776
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  SSZipArchive: b6648b70a36303ca5be9f0351174b347e1886236
 
-PODFILE CHECKSUM: 93026f65c36f5cca34eb617823d95e1647d37a95
+PODFILE CHECKSUM: 686f5666f4aac95c6da3d26ef93727c85867f56b
 
 COCOAPODS: 1.2.1

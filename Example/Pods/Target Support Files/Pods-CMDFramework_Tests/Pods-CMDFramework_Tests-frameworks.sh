@@ -94,6 +94,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/EasyPeasy/EasyPeasy.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Restofire/Restofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SSZipArchive/SSZipArchive.framework"
   install_framework "$BUILT_PRODUCTS_DIR/libPhoneNumber-iOS/libPhoneNumber_iOS.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -102,6 +103,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/EasyPeasy/EasyPeasy.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Restofire/Restofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SSZipArchive/SSZipArchive.framework"
   install_framework "$BUILT_PRODUCTS_DIR/libPhoneNumber-iOS/libPhoneNumber_iOS.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

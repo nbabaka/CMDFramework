@@ -242,6 +242,25 @@ public extension UIColor {
         }
     }
     
+    
+    public struct dropList {
+        public static var activeText: UIColor {
+            return UIColor(red: 20/255.0, green: 20/255.0, blue: 24/255.0, alpha: 1.0)
+        }
+        
+        public static var nonActiveText: UIColor {
+            return UIColor(red: 114/255.0, green: 114/255.0, blue: 127/255.0, alpha: 1.0)
+        }
+        
+        public static var activeBackground: UIColor {
+            return UIColor(red: 174/255.0, green: 174/255.0, blue: 186/255.0, alpha: 1.0)
+        }
+        
+        public static var nonActiveBackground: UIColor {
+            return UIColor(red: 45/255.0, green: 45/255.0, blue: 53/255.0, alpha: 1.0)
+        }
+    }
+    
     public struct padColors {
         public static var roundedRect: UIColor {
             return UIColor(red:34/255.0, green:35/255.0, blue:39/255.0,  alpha:1)

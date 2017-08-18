@@ -11,4 +11,10 @@ open class Dimensions {
         public static var textInset = CGRect(x: 12, y: 20, width: 12, height: 20)
         public static var cornerRadius: CGFloat = 5
     }
+
+    public struct dropList {
+        public static var itemsDrop: Int = 3
+        public static var tableviewBottomMargin: CGFloat = 15
+        public static var cornerRadius: CGFloat = 4
+    }
 }

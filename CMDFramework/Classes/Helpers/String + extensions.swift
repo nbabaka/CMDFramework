@@ -15,6 +15,14 @@ public extension String {
         }
     }
     
+    public var podLocalization: String {
+        get {
+            let path = Bundle(for: BaseView.self).path(forResource: "Localization", ofType: "bundle")
+            let bundle = Bundle(path: path!) ?? Bundle.main
+            return NSLocalizedString(self, bundle: bundle, comment: self)
+        }
+    }
+    
     public func containsOnlyCharactersIn(matchCharacters: String) -> Bool {
         let disallowedCharacterSet = NSCharacterSet(charactersIn: matchCharacters).inverted
         return self.rangeOfCharacter(from: disallowedCharacterSet) == nil

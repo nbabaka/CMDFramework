@@ -1,6 +1,6 @@
 {
   "name": "CMDFramework",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "summary": "CINEMOOD IOS Application Framework",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://cinemood.com",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "ssh://git@stash.dev.cinemood.com:7999/cma/cinemood-ios-framework.git",
-    "tag": "0.2.4"
+    "tag": "0.2.5"
   },
   "platforms": {
     "ios": "10.0"
@@ -32,15 +32,23 @@
     ],
     "Restofire": [
 
+    ],
+    "SSZipArchive": [
+
     ]
   },
   "resource_bundles": {
-    "CMDFramework": [
+    "Assets": [
       "CMDFramework/Assets/*.xcassets"
+    ],
+    "Localization": [
+      "CMDFramework/*.lproj/*.strings"
+    ],
+    "Resources": [
+      "CMDFramework/Resources/**/*"
     ]
   },
   "resources": [
-    "CMDFramework/Assets/*.xcassets",
-    "CMDFramework/*.strings"
+    "CMDFramework/Assets/*.xcassets"
   ]
 }

@@ -51,8 +51,16 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         self.navigationItem.titleView = titleLabel
     }
     
+    open func setMenuBarButton(withImage image: UIImage?) {
+        let menuButton = UIBarButtonItem.init(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(self.menuButtonPressed(_:)))
+        self.navigationItem.leftBarButtonItem = menuButton
+    }
     
-    public func setBackgroundImage() {
+    open func menuButtonPressed(_ sender: UIBarButtonItem) {
+        // Override
+    }
+    
+    public func setBackground(withImage image: UIImage?) {
         guard let image = background else {
             return
         }

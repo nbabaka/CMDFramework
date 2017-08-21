@@ -9,7 +9,7 @@
 import EasyPeasy
 
 open class CMDCollectionViewController: CMDInitialViewController {
-    var refreshControl = CMDRefreshControl()
+    open var refreshControl = CMDRefreshControl()
     override open func viewDidLoad() {
         super.viewDidLoad()
         refreshControl.addTarget(self, action: #selector(self.refreshOptions(_:)), for: .valueChanged)

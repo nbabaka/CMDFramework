@@ -79,7 +79,6 @@ public  protocol HTTPConfigurable: Configurable { }
 public  extension HTTPConfigurable {
     public var configuration: Configuration {
         var config = Configuration()
-        config.logging = Restofire.defaultConfiguration.logging
         config.method = .post
         return config
     }

@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
-  - CMDFramework (0.3.0):
+  - CMDFramework (0.3.1):
     - EasyPeasy
     - libPhoneNumber-iOS
     - PKHUD
@@ -37,7 +37,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  CMDFramework: 7d90fdfe1e22d8452e08e54512a49755543f92d7
+  CMDFramework: 163ce1abdb7a16de931e64a5f570367614ac0008
   EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
   libPhoneNumber-iOS: f721ae4d5854bce60934f9fb9b0b28e8e68913cb
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015

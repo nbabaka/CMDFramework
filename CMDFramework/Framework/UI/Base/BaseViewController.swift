@@ -16,3 +16,12 @@ open class BaseViewController: UIViewController {
         // Override it
     }
 }
+
+public extension UIViewController {
+    public func setBackButton() {
+        let backItem = UIBarButtonItem()
+        //backItem.title = !DeviceType.IS_IPHONE_5_OR_LESS ? "Back".l : ""
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+    }
+}

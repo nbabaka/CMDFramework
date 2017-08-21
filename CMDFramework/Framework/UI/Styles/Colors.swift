@@ -79,8 +79,12 @@ public extension UIColor {
         public static var chatURL: UIColor {
             return UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1.0)
         }
-        
+    }
 
+    public struct controllers {
+        public static var title: UIColor {
+            return UIColor(red: 207/255.0, green: 210/255.0, blue: 225/255.0, alpha: 1.0)
+        }
     }
     
     public struct labels {

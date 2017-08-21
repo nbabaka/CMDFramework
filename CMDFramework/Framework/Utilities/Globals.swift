@@ -57,3 +57,25 @@ public func getBundleFilePath(bundle: String) -> String? {
     return path
 }
 
+public func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
+    var i = 0
+    return AnyIterator {
+        let next = withUnsafeBytes(of: &i) { $0.load(as: T.self) }
+        if next.hashValue != i { return nil }
+        i += 1
+        return next
+    }
+}
+
+public func associatedObject<ValueType: AnyObject>(base: AnyObject, key: UnsafePointer<String>, initialiser: () -> ValueType) -> ValueType {
+    if let associated = objc_getAssociatedObject(base, key) as? ValueType {
+        return associated
+    }
+    let associated = initialiser()
+    objc_setAssociatedObject(base, key, associated, .OBJC_ASSOCIATION_RETAIN)
+    return associated
+}
+
+public func associateObject<ValueType: AnyObject>(base: AnyObject, key: UnsafePointer<String>, value: ValueType) {
+    objc_setAssociatedObject(base, key, value, .OBJC_ASSOCIATION_RETAIN)
+}

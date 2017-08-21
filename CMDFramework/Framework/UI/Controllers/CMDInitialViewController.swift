@@ -9,8 +9,9 @@
 import PKHUD
 
 open class CMDInitialViewController : CMDKeyboardHandledViewController {
-    
+
     open var titleLogo: UIImage?
+    open var background: UIImage?
     public var backgroundImage: UIImageView?
     public var moveToRoot: Bool = false
     public var parentVC: UIViewController?
@@ -48,6 +49,18 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         let titleLabel = CMDSettableLabel(text: text, andFont: UIFont.controllers.title, andColor: UIColor.controllers.title, andSpacing: 4)
         titleLabel.sizeToFit()
         self.navigationItem.titleView = titleLabel
+    }
+    
+    
+    public func setBackgroundImage() {
+        guard let image = background else {
+            return
+        }
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        image.drawAsPattern(in: self.view.bounds)
+        let compiledImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: compiledImage)
     }
     
     public func setNavigationTitleLogo() {
@@ -167,6 +180,15 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
     
     public func userOff() {
         userActivity(isOn: false)
+    }
+    
+    public func showAlert(withTitle title: String, andText text: String, andIcon icon: UIImage, andButton button: String) {
+        let alert = CMDOneButtonAlert(withIcon: icon, andTitle: title, andMainText: text)
+        alert.text = button
+        alert.onPushButtonBlock = {
+            alert.close(.moveDown)
+        }
+        alert.show(.moveUp)
     }
 
     private func userActivity(isOn: Bool) {

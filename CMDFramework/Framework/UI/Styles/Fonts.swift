@@ -33,6 +33,16 @@ public extension UIFont {
         }
     }
     
+    public struct alerts {
+        public static var title: UIFont {
+            return UIFont(name: "GothamPro-Black", size: 34.0)!
+        }
+        
+        public static var text: UIFont {
+            return UIFont(name: "GothamPro-Medium", size: 18.0)!
+        }
+    }
+    
     public struct buttons {
         public static var blueButton: UIFont {
             return UIFont(name: "GothamPro-Black", size: 18.0)!

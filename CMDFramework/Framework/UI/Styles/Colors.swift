@@ -87,6 +87,16 @@ public extension UIColor {
         }
     }
     
+    public struct alerts {
+        public static var title: UIColor {
+            return UIColor(red: 195.0 / 255.0, green: 199.0 / 255.0, blue: 217.0 / 255.0, alpha: 1.0)
+        }
+        
+        public static var text: UIColor {
+            return UIColor(red: 160.0 / 255.0, green: 163.0 / 255.0, blue: 179.0 / 255.0, alpha: 1.0)
+        }
+    }
+    
     public struct labels {
         public static var TBFLabelTextColor: UIColor {
             return UIColor(red: 160/255.0, green: 163/255.0, blue: 179/255.0, alpha: 1.0)

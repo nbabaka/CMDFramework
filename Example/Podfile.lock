@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.5.0)
-  - CMDFramework (0.3.1):
+  - CMDFramework (0.3.3):
+    - EasyAnimation
     - EasyPeasy
     - libPhoneNumber-iOS
     - PKHUD
@@ -8,6 +9,7 @@ PODS:
     - SDWebImage
     - SSZipArchive
     - SwiftyJSON (~> 3.1)
+  - EasyAnimation (2.0.1)
   - EasyPeasy (1.4.2)
   - libPhoneNumber-iOS (0.9.10)
   - PKHUD (4.2.3)
@@ -23,6 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - CMDFramework (from `../`)
+  - EasyAnimation
   - EasyPeasy
   - libPhoneNumber-iOS
   - PKHUD
@@ -37,7 +40,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  CMDFramework: 163ce1abdb7a16de931e64a5f570367614ac0008
+  CMDFramework: 9cc237dd887b1db505fe0dbcd78f1589ec1f70d5
+  EasyAnimation: 0bc71a385be3fc0239e487fb8f0dde626e6c7466
   EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
   libPhoneNumber-iOS: f721ae4d5854bce60934f9fb9b0b28e8e68913cb
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
@@ -46,6 +50,6 @@ SPEC CHECKSUMS:
   SSZipArchive: b6648b70a36303ca5be9f0351174b347e1886236
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: e375eaca4c982849764e53b19e179cc256d89fe7
+PODFILE CHECKSUM: ca42f3645d36108dc522e9cc81a9afa82e4ac2a2
 
 COCOAPODS: 1.2.1

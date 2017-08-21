@@ -1,9 +1,9 @@
 //
-//  CMViewController.swift
+//  CMDInitialViewController.swift
 //  CinemoodApp
 //
-//  Created by Nikolay Karataev on 16/03/2017.
-//  Copyright © 2017 Underlama. All rights reserved.
+//  Created by Nikolay Karataev on 21/08/2017.
+//  Copyright © 2017 Cinemood Trendsetters Co. All rights reserved.
 //
 
 import PKHUD
@@ -116,15 +116,15 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         }, completion: nil)
     }
     
-    public func setActiveAgain() {
+    open func setActiveAgain() {
         // Must override
     }
     
-    public func setResignActive() {
+    open func setResignActive() {
         // Must override
     }
 
-    public func setBackground() {
+    open func setBackground() {
         // Must override
     }
     

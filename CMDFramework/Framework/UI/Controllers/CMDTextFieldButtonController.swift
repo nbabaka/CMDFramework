@@ -40,7 +40,7 @@ open class CMDTextFieldButtonController: CMDInitialViewController {
         return .lightContent
     }
     
-    internal func setOldIPhoneConstraints() {
+    open func setOldIPhoneConstraints() {
         if DeviceType.IS_IPHONE_5_OR_LESS {
             self.view.easy_clear()
             let tempField = fieldView != nil ? fieldView : field

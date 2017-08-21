@@ -11,7 +11,6 @@ import PKHUD
 open class CMDInitialViewController : CMDKeyboardHandledViewController {
 
     open var titleLogo: UIImage?
-    open var background: UIImage?
     public var backgroundImage: UIImageView?
     public var moveToRoot: Bool = false
     public var parentVC: UIViewController?
@@ -61,9 +60,10 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
     }
     
     public func setBackground(withImage image: UIImage?) {
-        guard let image = background else {
+        guard let image = image else {
             return
         }
+        
         UIGraphicsBeginImageContext(self.view.frame.size)
         image.drawAsPattern(in: self.view.bounds)
         let compiledImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!

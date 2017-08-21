@@ -38,8 +38,8 @@ open class CMDTwoButtonsAlert: CMDAlertViewBase {
         }
     }
     
-    internal var leftButton = CMDClassicButton()
-    internal var rightButton = CMDClassicButton()
+    open var leftButton = CMDClassicButton()
+    open var rightButton = CMDClassicButton()
     
     override open func draw(_ rect: CGRect) {
         super.draw(rect)

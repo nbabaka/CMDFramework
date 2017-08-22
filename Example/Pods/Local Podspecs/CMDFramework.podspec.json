@@ -1,6 +1,6 @@
 {
   "name": "CMDFramework",
-  "version": "0.3.3",
+  "version": "0.3.5",
   "summary": "CINEMOOD IOS Application Framework",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://cinemood.com",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "ssh://git@stash.dev.cinemood.com:7999/cma/cinemood-ios-framework.git",
-    "tag": "0.3.3"
+    "tag": "0.3.5"
   },
   "platforms": {
     "ios": "10.0"
@@ -43,6 +43,12 @@
 
     ],
     "EasyAnimation": [
+
+    ],
+    "FacebookCore": [
+
+    ],
+    "FacebookLogin": [
 
     ]
   },

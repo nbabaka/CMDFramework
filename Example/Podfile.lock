@@ -6,7 +6,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - CMDFramework (0.3.5):
+  - CMDFramework (0.4.0):
     - EasyAnimation
     - EasyPeasy
     - FacebookCore
@@ -63,7 +63,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  CMDFramework: f837b0668a7b15907652fce782acd1fad029e70b
+  CMDFramework: df34dbd62ba35a48156e4ef932ecc32b354b5263
   EasyAnimation: 0bc71a385be3fc0239e487fb8f0dde626e6c7466
   EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de

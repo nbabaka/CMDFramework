@@ -18,7 +18,7 @@ public enum CMDFacebookError {
     case cancelled
 }
 
-public class CMDFacebookManager {
+open class CMDFacebookManager: NSObject {
     public func getCurrentToken() -> String? {
         return AccessToken.current?.authenticationToken
     }

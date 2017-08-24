@@ -213,7 +213,7 @@ public extension UIColor {
         }
         
         public static var redButtonTitle: UIColor {
-            return UIColor(red: 230/255.0, green: 13/255.0, blue: 67/255.0, alpha: 1.0)
+            return UIColor(red: 230/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1.0)
         }
     }
     

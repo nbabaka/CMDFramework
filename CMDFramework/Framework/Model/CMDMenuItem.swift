@@ -25,15 +25,16 @@ open class CMDMenuItem: NSObject {
 
 open class CMDMenuItemAction: NSObject {
     public var action: CMDMenuItemActionBlock?
-    public init(presentWithID id: String, target: UIViewController?, values: [String: Any]? = nil) {
+    public init(presentWithID id: String, values: [String: Any]? = nil) {
         super.init()
         self.action = {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: id) 
+            let viewController = storyBoard.instantiateViewController(withIdentifier: id)
             viewController.modalPresentationStyle = .overCurrentContext
             if let valuesDic = values {
                 viewController.setValuesForKeys(valuesDic)
             }
+            let target = CMDMenuItemsManager.shared.getTarget()
             target?.present(viewController, animated: true, completion: nil)
         }
     }
@@ -50,15 +51,16 @@ open class CMDMenuItemAction: NSObject {
         self.action = withClosure
     }
     
-    public convenience init(changeWithID id: String, target: UIViewController?, values: [String: Any]? = nil) {
-        self.init(changeWithID: id, storyBoard: "Main", target: target, values: values)
+    public convenience init(changeWithID id: String, values: [String: Any]? = nil) {
+        self.init(changeWithID: id, storyBoard: "Main", values: values)
     }
     
-    public init(changeWithID id: String, storyBoard: String, target: UIViewController?, values: [String: Any]? = nil) {
+    public init(changeWithID id: String, storyBoard: String, values: [String: Any]? = nil) {
         super.init()
         self.action = {
             let storyBoard = UIStoryboard(name: storyBoard, bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: id)
+            let target = CMDMenuItemsManager.shared.getTarget()
             if let navigationController = target?.sideMenuController?.rootViewController as? UINavigationController {
                 navigationController.setViewControllers([viewController], animated: false)
             }

@@ -11,6 +11,7 @@ target 'CMDFramework_Tests' do
   pod 'EasyAnimation'
   pod 'FacebookCore'
   pod 'FacebookLogin'
+  pod 'LGSideMenuController'
 
   post_install do |installer|
       installer.pods_project.targets.each do |target|

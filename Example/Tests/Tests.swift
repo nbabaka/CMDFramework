@@ -2,6 +2,7 @@ import UIKit
 import XCTest
 import CMDFramework
 import libPhoneNumber_iOS
+import LGSideMenuController
 
 class Tests: XCTestCase {
     

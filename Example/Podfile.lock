@@ -6,11 +6,12 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - CMDFramework (0.4.0):
+  - CMDFramework (0.4.3):
     - EasyAnimation
     - EasyPeasy
     - FacebookCore
     - FacebookLogin
+    - LGSideMenuController
     - libPhoneNumber-iOS
     - PKHUD
     - Restofire
@@ -31,6 +32,7 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.25.0):
     - FBSDKCoreKit
+  - LGSideMenuController (2.1.1)
   - libPhoneNumber-iOS (0.9.10)
   - PKHUD (4.2.3)
   - Restofire (2.2.1):
@@ -49,6 +51,7 @@ DEPENDENCIES:
   - EasyPeasy
   - FacebookCore
   - FacebookLogin
+  - LGSideMenuController
   - libPhoneNumber-iOS
   - PKHUD
   - Restofire
@@ -63,13 +66,14 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  CMDFramework: df34dbd62ba35a48156e4ef932ecc32b354b5263
+  CMDFramework: 31c22ff81381c8dc95c0de7b5dd0da979dd6b863
   EasyAnimation: 0bc71a385be3fc0239e487fb8f0dde626e6c7466
   EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
   FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
+  LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
   libPhoneNumber-iOS: f721ae4d5854bce60934f9fb9b0b28e8e68913cb
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   Restofire: 1285344e15717bb721d2ad85e7d4ded8c144144d
@@ -77,6 +81,6 @@ SPEC CHECKSUMS:
   SSZipArchive: b6648b70a36303ca5be9f0351174b347e1886236
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 25401313a528011b6a5be361d970f61b964ef0b3
+PODFILE CHECKSUM: d13642fe02b58dcd3dea736128e4e9b9a4baa10e
 
 COCOAPODS: 1.2.1

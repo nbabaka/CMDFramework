@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CMDFramework'
-  s.version          = '0.4.1'
+  s.version          = '0.4.2'
   s.summary          = 'CINEMOOD IOS Application Framework'
 
 # This description is used to generate tags and improve search results.

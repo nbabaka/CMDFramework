@@ -49,17 +49,17 @@ open class CMDMenuItemAction: NSObject {
         self.action = withClosure
     }
     
-    public convenience init(changeWithID id: String, target: UIViewController?, values: [String: Any]? = nil) {
-        self.init(changeWithID: id, storyBoard: "Main", target: target, values: values)
+    public convenience init(changeWithID id: String, navigationController: UINavigationController?, target: UIViewController?, values: [String: Any]? = nil) {
+        self.init(changeWithID: id, storyBoard: "Main", navigationController: navigationController, target: target, values: values)
     }
     
-    public init(changeWithID id: String, storyBoard: String, target: UIViewController?, values: [String: Any]? = nil) {
+    public init(changeWithID id: String, storyBoard: String, navigationController: UINavigationController?, target: UIViewController?, values: [String: Any]? = nil) {
         super.init()
         self.action = {
             let storyBoard = UIStoryboard(name: storyBoard, bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: id)
-            if let navigationController = target?.sideMenuController?.rootViewController as? UINavigationController {
-                navigationController.setViewControllers([viewController], animated: CMDConstants.menuAnimated)
+            if let navigationController = navigationController {
+                navigationController.setViewControllers([viewController], animated: false)
             }
         }
     }

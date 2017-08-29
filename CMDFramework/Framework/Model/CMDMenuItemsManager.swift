@@ -21,7 +21,7 @@ public class CMDMenuItemsManager: NSObject {
         self.target = target
         self.isAuth = auth
         self.menuItems.removeAll()
-        self.menuItems = list
+        self.menuItems = items
     }
     
     public func getVisible() -> [CMDMenuItem] {

@@ -18,6 +18,28 @@ open class CMDMenuItem: NSObject {
     public var visible: Bool = true
     public var needAuth: Bool = false
     
+    public convenience init(withTitle title: String, andIcon icon: CMDMenuItemIcon, andAction action: CMDMenuItemAction, andNeedAuth auth: Bool) {
+        self.init(withTitle: title, andIcon: icon, andAction: action)
+        self.needAuth = auth
+    }
+    
+    public convenience init(withTitle title: String, andIcon icon: CMDMenuItemIcon, andAction action: CMDMenuItemAction, andSelectable selectable: Bool, andNeedAuth auth: Bool) {
+        self.init(withTitle: title, andIcon: icon, andAction: action, andSelectable: selectable)
+        self.needAuth = auth
+    }
+    
+    public convenience init(withTitle title: String, andIcon icon: CMDMenuItemIcon, andAction action: CMDMenuItemAction, andSelectable selectable: Bool) {
+        self.init(withTitle: title, andIcon: icon, andAction: action)
+        self.selectable = selectable
+    }
+    
+    public convenience init(withTitle title: String, andIcon icon: CMDMenuItemIcon, andAction action: CMDMenuItemAction) {
+        self.init()
+        self.title = title
+        self.icon = icon
+        self.action = action
+    }
+    
     public func makeAction() {
         self.action?.makeAction()
     }

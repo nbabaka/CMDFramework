@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol CMDViewControllerNotificationsProtocol {
+public protocol CMDViewControllerNotificationsProtocol {
     var notificationProxies: [CMDObserverProxy] {get set}
     func registerListenerForUserNotifications()
     func stopListeners()
 }
 
-extension CMDViewControllerNotificationsProtocol {
+public extension CMDViewControllerNotificationsProtocol {
     func stopListeners() {
         self.notificationProxies.forEach {
             $0.stop()

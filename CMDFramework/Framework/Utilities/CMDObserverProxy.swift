@@ -8,8 +8,21 @@
 
 import UIKit
 
+protocol CMDViewControllerNotificationsProtocol {
+    var notificationProxies: [CMDObserverProxy] {get set}
+    func registerListenerForUserNotifications()
+    func stopListeners()
+}
+
+extension CMDViewControllerNotificationsProtocol {
+    func stopListeners() {
+        self.notificationProxies.forEach {
+            $0.stop()
+        }
+    }
+}
+
 open class CMDObserverProxy: NSObject {
-    
     open var closure: ((Notification) -> ())?
     open var name: Notification.Name!
     open var object: AnyObject?

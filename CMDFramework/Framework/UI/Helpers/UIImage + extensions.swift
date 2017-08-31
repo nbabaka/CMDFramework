@@ -103,6 +103,123 @@
 import Accelerate
 
 public extension UIImage {
+    public func maskImageWithPath(path: UIBezierPath) -> UIImage {
+        let imgRef = self.CGImageWithCorrectOrientation()
+        let size = CGSize(width: CGFloat(imgRef.width) / self.scale, height: CGFloat(imgRef.height) / self.scale)
+        return self.drawImageWithClosure(size: size) { (size: CGSize, context: CGContext) -> () in
+            let boundSize = path.bounds.size
+            let pathRatio = boundSize.width / boundSize.height
+            let imageRatio = size.width / size.height
+            if pathRatio > imageRatio {
+                //scale based on width
+                let scale = size.width / boundSize.width
+                path.apply(CGAffineTransform(scaleX: scale, y: scale))
+                path.apply(CGAffineTransform(translationX: 0, y: (size.height - path.bounds.height) / 2.0))
+            } else {
+                //scale based on height
+                let scale = size.height / boundSize.height
+                path.apply(CGAffineTransform(scaleX: scale, y: scale))
+                path.apply(CGAffineTransform(translationX: (size.width - path.bounds.width) / 2.0, y: 0))
+            }
+            
+            let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            
+            context.addPath(path.cgPath)
+            context.clip()
+            self.draw(in: rect)
+        }
+    }
+    
+    public func resizeImage(size: CGSize) -> UIImage {
+        let imgRef = self.CGImageWithCorrectOrientation()
+        let originalWidth  = CGFloat(imgRef.width)
+        let originalHeight = CGFloat(imgRef.height)
+        let widthRatio = size.width / originalWidth
+        let heightRatio = size.height / originalHeight
+        let scaleRatio = widthRatio > heightRatio ? widthRatio : heightRatio
+        let resizedImageBounds = CGRect(x: 0, y: 0, width: round(originalWidth * scaleRatio), height: round(originalHeight * scaleRatio))
+        let resizedImage = self.drawImageInBounds(bounds: resizedImageBounds)
+        return resizedImage
+    }
+    
+    public func CGImageWithCorrectOrientation() -> CGImage {
+        if (self.imageOrientation == UIImageOrientation.up) {
+            return self.cgImage!
+        }
+        
+        var transform : CGAffineTransform = CGAffineTransform.identity;
+        switch (self.imageOrientation) {
+        case UIImageOrientation.right, UIImageOrientation.rightMirrored:
+            transform = transform.translatedBy(x: 0, y: self.size.height)
+            transform = transform.rotated(by: CGFloat(-1.0 * .pi / 2))
+            break
+        case UIImageOrientation.left, UIImageOrientation.leftMirrored:
+            transform = transform.translatedBy(x: self.size.width, y: 0)
+            transform = transform.rotated(by: .pi / 2)
+            break
+        case UIImageOrientation.down, UIImageOrientation.downMirrored:
+            transform = transform.translatedBy(x: self.size.width, y: self.size.height)
+            transform = transform.rotated(by: .pi)
+            break
+        default:
+            break
+        }
+        
+        switch (self.imageOrientation) {
+        case UIImageOrientation.rightMirrored, UIImageOrientation.leftMirrored:
+            transform = transform.translatedBy(x: self.size.height, y: 0)
+            transform = transform.scaledBy(x: -1, y: 1)
+            break
+        case UIImageOrientation.downMirrored, UIImageOrientation.upMirrored:
+            transform = transform.translatedBy(x: self.size.width, y: 0)
+            transform = transform.scaledBy(x: -1, y: 1)
+            break
+        default:
+            break
+        }
+        
+        let contextWidth: Int
+        let contextHeight: Int
+        
+        switch (self.imageOrientation) {
+        case UIImageOrientation.left, UIImageOrientation.leftMirrored,
+             UIImageOrientation.right, UIImageOrientation.rightMirrored:
+            contextWidth = (self.cgImage?.height)!
+            contextHeight = (self.cgImage?.width)!
+            break
+        default:
+            contextWidth = (self.cgImage?.width)!
+            contextHeight = (self.cgImage?.height)!
+            break
+        }
+        
+        let context: CGContext = CGContext(data: nil, width: contextWidth, height: contextHeight,
+                                           bitsPerComponent: self.cgImage!.bitsPerComponent,
+                                           bytesPerRow: self.cgImage!.bytesPerRow,
+                                           space: self.cgImage!.colorSpace!,
+                                           bitmapInfo: self.cgImage!.bitmapInfo.rawValue)!
+        
+        context.concatenate(transform)
+        context.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: CGFloat(contextWidth), height: CGFloat(contextHeight)))
+        
+        let cgImage = context.makeImage()
+        return cgImage!;
+    }
+    
+    public func drawImageInBounds(bounds : CGRect) -> UIImage {
+        return drawImageWithClosure(size: bounds.size) { (size: CGSize, context: CGContext) -> () in
+            self.draw(in: bounds)
+        }
+    }
+    
+    public func drawImageWithClosure(size: CGSize!, closure: (_ size: CGSize, _ context: CGContext) -> ()) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        closure(size, UIGraphicsGetCurrentContext()!)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
     public func inverseImage(cgResult: Bool) -> UIImage? {
         let coreImage = UIKit.CIImage(image: self)
         guard let filter = CIFilter(name: "CIColorInvert") else { return nil }

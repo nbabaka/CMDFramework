@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A1633A044DBCA6D2636694391E14D64BA6030769",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B47DD393B004342F31981834C355853ABABD3FBC" : 9223372036854775807,
+    "A1633A044DBCA6D2636694391E14D64BA6030769" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "750B8063-5750-4311-8811-E3BE7BEB7B1F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B47DD393B004342F31981834C355853ABABD3FBC" : "CINEMOOD%20App\/",
+    "A1633A044DBCA6D2636694391E14D64BA6030769" : "CMDFramework\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CMDFramework",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/CMDFramework.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/stash.dev.cinemood.com:7999\/cma\/cinemood-ios-framework.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A1633A044DBCA6D2636694391E14D64BA6030769"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/stash.dev.cinemood.com:7999\/cma\/cinemood-ios-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B47DD393B004342F31981834C355853ABABD3FBC"
+    }
+  ]
+}

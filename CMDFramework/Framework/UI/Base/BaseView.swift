@@ -32,4 +32,14 @@ public extension UIView {
             layer.render(in: rendererContext.cgContext)
         }
     }
+
+    public func setMask(with hole: CGPath){
+        let mutablePath = CGMutablePath()
+        mutablePath.addRect(self.bounds)
+        mutablePath.addPath(hole)
+        let mask = CAShapeLayer()
+        mask.path = mutablePath
+        mask.fillRule = kCAFillRuleEvenOdd
+        self.layer.mask = mask
+    }
 }

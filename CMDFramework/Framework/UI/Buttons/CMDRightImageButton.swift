@@ -7,7 +7,7 @@
 //
 
 open class CMDRightImageButton: CMDClassicButton {
-    override func initButton() {
+    override open func initButton() {
         super.initButton()
         self.spacing = 2
         self.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 10.0)

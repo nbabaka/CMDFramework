@@ -7,7 +7,7 @@
 //
 
 open class CMDRedButton: CMDGrayButton {
-    override func initButton() {
+    override open func initButton() {
         super.initButton()
         self.backgroundColor = UIColor.buttons.redButtonBackground
         self.setTitleColor(UIColor.buttons.redButtonTitle, for: .normal)

@@ -7,7 +7,7 @@
 //
 
 open class CMDGrayButton: CMDBlueButton {
-    override func initButton() {
+    override open func initButton() {
         super.initButton()
         self.backgroundColor = UIColor.buttons.grayButtonBackground
         self.unHighlightBackgroundColor = UIColor.buttons.grayButtonBackground

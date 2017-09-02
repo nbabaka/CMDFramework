@@ -215,6 +215,10 @@ public extension UIColor {
         public static var redButtonTitle: UIColor {
             return UIColor(red: 230/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1.0)
         }
+        
+        public static var facebook: UIColor {
+            return UIColor(red: 60.0 / 255.0, green: 90.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0)
+        }
     }
     
     

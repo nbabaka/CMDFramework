@@ -48,7 +48,7 @@ open class CMDButtonBase : UIButton {
         }
     }
     
-    internal func initButton() {
+    open func initButton() {
         self.titleLabel?.adjustsFontSizeToFitWidth = true
         self.titleLabel?.minimumScaleFactor = 0.5
         self.addTarget(self, action: #selector(self.pushButton(_:)), for: UIControlEvents.touchUpInside)

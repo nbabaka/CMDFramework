@@ -17,7 +17,7 @@ open class CMDClassicButton: CMDButtonBase {
         }
     }
     
-    override func initButton() {
+    override open func initButton() {
         super.initButton()
         self.spacing = 4
         self.setTitleColor(UIColor.buttons.classicButtonTitle, for: .normal)

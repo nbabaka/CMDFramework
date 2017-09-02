@@ -7,7 +7,7 @@
 //
 
 open class CMDBackButton: CMDClassicButton {
-    override func initButton() {
+    override open func initButton() {
         super.initButton()
         self.contentHorizontalAlignment = .left
         self.spacing = 2

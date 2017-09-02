@@ -13,7 +13,7 @@ open class CMDPushColoredButton: CMDButtonBase {
         }
     }
     
-    override func initButton() {
+    override open func initButton() {
         super.initButton()
         self.spacing = 2
         self.setImage(#imageLiteral(resourceName: "select"), for: .normal)

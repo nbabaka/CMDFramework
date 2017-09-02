@@ -30,7 +30,7 @@ open class CMDBlueButton: CMDButtonBase {
         }
     }
     
-    override func initButton() {
+    override open func initButton() {
         super.initButton()
         self.spacing = 4
         self.backgroundColor = unHighlightBackgroundColor

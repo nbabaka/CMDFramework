@@ -56,8 +56,8 @@ open class CMDLabelBase: UILabel {
 }
 
 
-extension UILabel {
-    func setLineHeight(lineHeight: CGFloat) {
+public extension UILabel {
+    public func setLineHeight(lineHeight: CGFloat) {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 1.0
         paragraphStyle.lineHeightMultiple = lineHeight

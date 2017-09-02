@@ -6,10 +6,9 @@
 //
 //
 
-import UIKit
-
-class CMDFacebookButton: CMDBlueButton {
+open class CMDFacebookButton: CMDBlueButton {
     override open func initButton() {
+        super.initButton()
         self.setTitleColor(UIColor.white, for: .normal)
         self.setTitleColor(UIColor.white, for: .highlighted)
         self.backgroundColor = UIColor.buttons.facebook

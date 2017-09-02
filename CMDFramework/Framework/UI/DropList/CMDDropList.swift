@@ -10,7 +10,7 @@ import EasyPeasy
 
 open class CMDDropList: UIButton {
     // Constants
-    let dropImage: UIImage = #imageLiteral(resourceName: "dropdown")
+    let dropImage: UIImage = getImageFromBundle(name: "dropdown", withClass: CMDDropList.self)
     let itemsDrop: Int = Dimensions.dropList.itemsDrop
     
     // Styles

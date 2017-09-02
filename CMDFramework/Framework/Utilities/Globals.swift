@@ -79,3 +79,12 @@ public func associatedObject<ValueType: AnyObject>(base: AnyObject, key: UnsafeP
 public func associateObject<ValueType: AnyObject>(base: AnyObject, key: UnsafePointer<String>, value: ValueType) {
     objc_setAssociatedObject(base, key, value, .OBJC_ASSOCIATION_RETAIN)
 }
+
+public func getImageFromBundle(name: String, withClass: AnyClass) -> UIImage {
+    let podBundle = Bundle(for: withClass.self)
+    if let url = podBundle.url(forResource: "Assets", withExtension: "bundle") {
+        let bundle = Bundle(url: url)
+        return UIImage(named: name, in: bundle, compatibleWith: nil)!
+    }
+    return UIImage()
+}

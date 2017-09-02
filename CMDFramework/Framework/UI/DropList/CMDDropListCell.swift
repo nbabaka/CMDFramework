@@ -10,7 +10,7 @@ import EasyPeasy
 
 open class CMDDropListCell: UITableViewCell {
     open var itemView: CMDDropListItem?
-    open var selectedImageView: UIImageView = UIImageView(image: #imageLiteral(resourceName: "default"))
+    open var selectedImageView: UIImageView = UIImageView(image: getImageFromBundle(name: "default", withClass: UITableViewCell.self))
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

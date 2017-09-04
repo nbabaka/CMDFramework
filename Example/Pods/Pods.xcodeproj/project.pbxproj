@@ -85,6 +85,7 @@
 		1EEEE7F4C0D7A6BF087631967EEA66CA /* String + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C064AF2A1AFDB6A6077A5A1BC93A59 /* String + extensions.swift */; };
 		208897AF1F5809AE006B45C4 /* CMDObserverProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208897AE1F5809AE006B45C4 /* CMDObserverProxy.swift */; };
 		208897BD1F5B3255006B45C4 /* CMDFacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208897BC1F5B3255006B45C4 /* CMDFacebookButton.swift */; };
+		208897CB1F5D6138006B45C4 /* CMDBaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208897CA1F5D6138006B45C4 /* CMDBaseAPIManager.swift */; };
 		20E6A96D253AFCDC26CFFDCAC8CB3E4F /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53655B7DB2B25055A6BA0CC4A5D6917 /* PKHUDErrorView.swift */; };
 		20EF6C21A196BC087854FD24CF7E2A3C /* BFMeasurementEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 691B3C3857781B01B7189E32E62DFD8B /* BFMeasurementEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2141D2A9E0BA73BA878A08CB97B04F6C /* ioapi_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = 7DEC9007338D033B594A2F6EAE2FF9AA /* ioapi_buf.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -1009,6 +1010,7 @@
 		2073B5FD9440786A7AA87C656CB3F118 /* CMDMenuItemsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CMDMenuItemsManager.swift; sourceTree = "<group>"; };
 		208897AE1F5809AE006B45C4 /* CMDObserverProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMDObserverProxy.swift; sourceTree = "<group>"; };
 		208897BC1F5B3255006B45C4 /* CMDFacebookButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMDFacebookButton.swift; sourceTree = "<group>"; };
+		208897CA1F5D6138006B45C4 /* CMDBaseAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMDBaseAPIManager.swift; sourceTree = "<group>"; };
 		218FB6676BE835D6E6B781F4EDC44A61 /* LGSideMenuView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuView.m; path = LGSideMenuController/LGSideMenuView.m; sourceTree = "<group>"; };
 		21B1B1202776A428C1614C72EAE7FE75 /* NSLayoutGuide+Easy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutGuide+Easy.swift"; path = "EasyPeasy/NSLayoutGuide+Easy.swift"; sourceTree = "<group>"; };
 		21B4B3C702742E58BE0417E03AC0BD38 /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
@@ -2827,6 +2829,7 @@
 		DD2221459444624E2A7C8A2636180A4D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				208897CA1F5D6138006B45C4 /* CMDBaseAPIManager.swift */,
 				F1350EE8982109DDFC32EC4330CB2825 /* BaseRequest.swift */,
 				E434C4B3F16D4486AB07CEF75273C56D /* CMDCellViewModel.swift */,
 				8A529FEC71FC6C00E0F3A53BB5E2EF54 /* CMDFacebookManager.swift */,
@@ -4084,6 +4087,7 @@
 				7ABEBBC130F94E459B9EBB21AC57F143 /* CMDLabelBase.swift in Sources */,
 				312FCAE8D3667368B505A12250202049 /* CMDLabelTFBController.swift in Sources */,
 				301C3FF983B5622A20BB4868C1D54632 /* CMDMenuItem.swift in Sources */,
+				208897CB1F5D6138006B45C4 /* CMDBaseAPIManager.swift in Sources */,
 				993FAF434CF0DA5DE249B178B3CE70E7 /* CMDMenuItemsManager.swift in Sources */,
 				4E9BAF682B9DFB6F85F86A60C9388323 /* CMDOneButtonAlert.swift in Sources */,
 				16E157965983EA1D6DD197E910DC150B /* CMDPhoneField.swift in Sources */,

@@ -10,10 +10,10 @@ import EasyPeasy
 
 open class CMDTextFieldButtonController: CMDInitialViewController {
 
-    public var label: UILabel?
-    public var field: UIControl?
-    public var fieldView: UIView?
-    public var button: UIButton?
+    @IBOutlet public var label: UILabel?
+    @IBOutlet public var field: UIControl?
+    @IBOutlet public var fieldView: UIView?
+    @IBOutlet public var button: UIButton?
     
     override open func viewDidLoad() {
         super.viewDidLoad()

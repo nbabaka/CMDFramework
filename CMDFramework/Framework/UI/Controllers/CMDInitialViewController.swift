@@ -7,6 +7,7 @@
 //
 
 import PKHUD
+import EasyPeasy
 
 open class CMDInitialViewController : CMDKeyboardHandledViewController {
 
@@ -15,6 +16,7 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
     public var moveToRoot: Bool = false
     public var parentVC: UIViewController?
     public let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+    internal var backButtonAction: ((Void) -> Void)?
     
     internal var hideDelay = 4
     
@@ -23,6 +25,15 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(broadcastNotificationsReceived(_:)), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(broadcastNotificationsReceived(_:)), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(broadcastNotificationsReceived(_:)), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+    }
+    
+    public func addBackButton(withBlock block: @escaping (Void) -> Void) {
+        let button = CMDBackButton()
+        self.backButtonAction = block
+        button.addTarget(self, action: #selector(self.handleBackButton(_:)), for: UIControlEvents.touchUpInside)
+        self.view.addSubview(button)
+        button <- [Top(30), Left(15), Right(15)]
+        self.view.needsUpdateConstraints()
     }
     
     public func deleteController(atIndex index: Int = 1) {
@@ -199,6 +210,10 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         alert.show(.moveUp)
     }
 
+    @objc private func handleBackButton(_ button: UIButton) {
+        self.backButtonAction?()
+    }
+    
     private func userActivity(isOn: Bool) {
         self.view.isUserInteractionEnabled = isOn
     }

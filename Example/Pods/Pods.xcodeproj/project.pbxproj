@@ -83,6 +83,7 @@
 		1E26BBB18CFCA4FDEF2E73142C64DDC5 /* FBSDKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED154B61100B2376F3796454BA8DE1A /* FBSDKConstants.m */; };
 		1EA0F6A069B6914322E954F936724AEA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E37611CB69D033C8E4FF7E0CFB67D1 /* CoreTelephony.framework */; };
 		1EEEE7F4C0D7A6BF087631967EEA66CA /* String + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C064AF2A1AFDB6A6077A5A1BC93A59 /* String + extensions.swift */; };
+		2056239D1F5EED1A005EFE1F /* CMDTextAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056239C1F5EED1A005EFE1F /* CMDTextAttribute.swift */; };
 		208897AF1F5809AE006B45C4 /* CMDObserverProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208897AE1F5809AE006B45C4 /* CMDObserverProxy.swift */; };
 		208897BD1F5B3255006B45C4 /* CMDFacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208897BC1F5B3255006B45C4 /* CMDFacebookButton.swift */; };
 		208897CB1F5D6138006B45C4 /* CMDBaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208897CA1F5D6138006B45C4 /* CMDBaseAPIManager.swift */; };
@@ -1007,6 +1008,7 @@
 		1E943E7F627EFC19D4BE9968602E43C2 /* Bolts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bolts-dummy.m"; sourceTree = "<group>"; };
 		1F55E322B7B89EB078A9A99266F8E304 /* CMDInsetsLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CMDInsetsLabel.swift; sourceTree = "<group>"; };
 		204AB3666BFFAD0821315736A9BC6CEE /* zip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = zip.h; path = SSZipArchive/minizip/zip.h; sourceTree = "<group>"; };
+		2056239C1F5EED1A005EFE1F /* CMDTextAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMDTextAttribute.swift; sourceTree = "<group>"; };
 		2073B5FD9440786A7AA87C656CB3F118 /* CMDMenuItemsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CMDMenuItemsManager.swift; sourceTree = "<group>"; };
 		208897AE1F5809AE006B45C4 /* CMDObserverProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMDObserverProxy.swift; sourceTree = "<group>"; };
 		208897BC1F5B3255006B45C4 /* CMDFacebookButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMDFacebookButton.swift; sourceTree = "<group>"; };
@@ -2665,6 +2667,7 @@
 				B9D26D57E5B3A433CFF1908F044CC127 /* CMDSpinner.swift */,
 				D322BCF6B83EB3EDAC9524D1030B90BB /* CMDVectorAnimatedView.swift */,
 				5F0D6041F684AD7143224B61DEFC3C9D /* UICustomNavigationBar.swift */,
+				2056239C1F5EED1A005EFE1F /* CMDTextAttribute.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -4118,6 +4121,7 @@
 				FC26CA24C49632F2D23375DDCB1617FB /* UIApplication + extension.swift in Sources */,
 				C2622CF5183D989197E6E30F156B9992 /* UIBezierPath + extension.swift in Sources */,
 				59655634CFA3EAEC58CD35EF0897FF0C /* UICustomNavigationBar.swift in Sources */,
+				2056239D1F5EED1A005EFE1F /* CMDTextAttribute.swift in Sources */,
 				EEC61AADBE30C9FA741817E8226F903D /* UIDevice + extension.swift in Sources */,
 				E7A24FF7F778AC0A4091F6C088011177 /* UIImage + extensions.swift in Sources */,
 				A1C34CA3D9F49AD4475AD6AD50759D79 /* UIImageView + extensions.swift in Sources */,

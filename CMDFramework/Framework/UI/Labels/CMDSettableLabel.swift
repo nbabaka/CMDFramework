@@ -48,6 +48,10 @@ open class CMDSettableLabel: CMDLabelBase {
         self.t = text
     }
     
+    public convenience init(withText text: String, andAttribute attr: CMDTextAttribute) {
+        self.init(text: text, andFont: attr.font, andColor: attr.color, andSpacing: attr.spacing)
+    }
+    
     override func setLabel() {
         self.font = myFont
         self.textColor = myColor

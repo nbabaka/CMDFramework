@@ -13,6 +13,7 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
     
     @IBOutlet open var scrollView: UIScrollView?
     open var titleLogo: UIImage?
+    open var titleAttribute: CMDTextAttribute?
     public var activeField: UIView?
     public var backgroundImage: UIImageView?
     public var moveToRoot: Bool = false
@@ -93,9 +94,14 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
     }
     
     public func setNavigationTitle(_ text: String) {
-        let titleLabel = CMDSettableLabel(text: text, andFont: UIFont.controllers.title, andColor: UIColor.controllers.title, andSpacing: 4)
+        let titleLabel = CMDSettableLabel(text: text, andFont: titleAttribute?.font ?? UIFont.controllers.title, andColor: titleAttribute?.color ?? UIColor.controllers.title, andSpacing: titleAttribute?.spacing ?? 4)
         titleLabel.sizeToFit()
         self.navigationItem.titleView = titleLabel
+    }
+    
+    public func setNavigationTitle(withText text: String, andAttribute attr: CMDTextAttribute) {
+        self.titleAttribute = attr
+        self.setNavigationTitle(text)
     }
     
     open func setMenuBarButton(withImage image: UIImage?) {

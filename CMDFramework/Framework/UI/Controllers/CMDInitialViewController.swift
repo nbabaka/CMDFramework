@@ -10,14 +10,16 @@ import PKHUD
 import EasyPeasy
 
 open class CMDInitialViewController : CMDKeyboardHandledViewController {
-
+    
+    @IBOutlet open var scrollView: UIScrollView?
     open var titleLogo: UIImage?
+    public var activeField: UIView?
     public var backgroundImage: UIImageView?
     public var moveToRoot: Bool = false
     public var parentVC: UIViewController?
     public let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-    internal var backButtonAction: ((Void) -> Void)?
     
+    internal var backButtonAction: ((Void) -> Void)?
     internal var hideDelay = 4
     
     override open func viewDidLoad() {
@@ -25,6 +27,41 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(broadcastNotificationsReceived(_:)), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(broadcastNotificationsReceived(_:)), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(broadcastNotificationsReceived(_:)), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+    }
+    
+    override open func keyboardShow(_ notification: Notification) {
+        super.keyboardShow(notification)
+        guard let scrollView = self.scrollView else {
+            return
+        }
+        scrollView.isScrollEnabled = true
+        var info = notification.userInfo!
+        if let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size {
+            let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+            
+            scrollView.contentInset = contentInsets
+            scrollView.scrollIndicatorInsets = contentInsets
+            
+            var aRect: CGRect = self.view.frame
+            aRect.size.height -= keyboardSize.height
+            if let activeField = self.activeField {
+                if !aRect.contains(activeField.frame.origin) {
+                    scrollView.scrollRectToVisible(activeField.frame, animated: true)
+                }
+            }
+        }
+    }
+    
+    override open func keyboardHide(_ notification: Notification) {
+        super.keyboardHide(notification)
+        guard let scrollView = self.scrollView else {
+            return
+        }
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        view.endEditing(true)
+        scrollView.isScrollEnabled = true
     }
     
     public func addBackButton(withBlock block: @escaping (Void) -> Void) {
@@ -155,7 +192,7 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
     open func setResignActive() {
         // Must override
     }
-
+    
     open func setBackground() {
         // Must override
     }
@@ -209,7 +246,7 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         }
         alert.show(.moveUp)
     }
-
+    
     @objc private func handleBackButton(_ button: UIButton) {
         self.backButtonAction?()
     }

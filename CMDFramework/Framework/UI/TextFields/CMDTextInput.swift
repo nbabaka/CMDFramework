@@ -80,7 +80,7 @@ open class CMDTextInput: UITextField, CMDText {
         setNeedsDisplay()
     }
     
-    internal func setupView() {
+    open func setupView() {
         self.backgroundColor = UIColor.textFields.nonActiveBackground
         self.layer.cornerRadius = Dimensions.textFields.cornerRadius
         self.layer.masksToBounds = true

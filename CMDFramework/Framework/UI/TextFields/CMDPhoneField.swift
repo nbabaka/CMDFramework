@@ -15,13 +15,22 @@ open class CMDPhoneField: CMDTextInputWithValidation {
     open var phoneNumber: String?
     open var phoneNumberFormatted: String?
     open var phoneRegion: String?
+    open var flagVisible: Bool = true {
+        didSet {
+            self.flagImageView.isHidden = !flagVisible
+            self.redraw()
+        }
+    }
     
     private let googleLab = NBPhoneNumberUtil()
-    private let leftMargin: CGFloat = 50
+    
     private var flagImageView: UIImageView!
     private var isLoadingFlag = false
+    private var leftMargin: CGFloat {
+        return (flagVisible && flagImageView.image != nil) ? 50 : 0
+    }
     
-    override func setupView() {
+    override open func setupView() {
         super.setupView()
         self.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         self.keyboardType = .phonePad
@@ -79,8 +88,7 @@ open class CMDPhoneField: CMDTextInputWithValidation {
             phoneRegion =  isValidated == false ? nil : googleLab.getRegionCode(for: parsedNumber)
             phoneNumberFormatted =  isValidated == false ? nil : try? googleLab.format(parsedNumber, numberFormat: .INTERNATIONAL)
         }
-        self.redrawText(textField.text ?? "")
-        setNeedsDisplay()
+        self.redraw()
     }
     
     public func tryToChangeFlag(withParsedNumber number: NBPhoneNumber?) {
@@ -93,6 +101,12 @@ open class CMDPhoneField: CMDTextInputWithValidation {
         } else {
             setHiddenFlag(true)
         }
+    }
+    
+    internal func redraw() {
+        self.redrawText(self.text ?? "")
+        setNeedsUpdateConstraints()
+        setNeedsLayout()
     }
     
     internal func changeFlag(countryCode: String) {
@@ -111,15 +125,21 @@ open class CMDPhoneField: CMDTextInputWithValidation {
         if !isHidden {
             isLoadingFlag = false
         }
-        UIView.animate(withDuration: 0.1){
+        UIView.animate(withDuration: 0.1, animations: {
             self.flagImageView.alpha = (isHidden == true) ? 0 : 1
-        }
+        }, completion: { isOk in
+            if isHidden {
+                self.flagImageView.image = nil
+            }
+            self.redraw()
+        })
     }
     
     internal func checkPrefix() {
-        if self.text == "" {
+        let placeholder = self.placeholder ?? ""
+        if self.text == "" && placeholder == "" {
             self.text = "+"
-        } else {
+        } else if self.text != "" {
             if let text = self.text {
                 if text[text.startIndex] != "+" {
                     self.text = "+" + text

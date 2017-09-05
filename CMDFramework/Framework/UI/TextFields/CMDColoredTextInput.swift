@@ -17,7 +17,7 @@ open class CMDColoredTextInput: CMDTextInput, UITextFieldDelegate {
         }
     }
     
-    override func setupView() {
+    override open func setupView() {
         super.setupView()
         self.activeStatus = false
     }

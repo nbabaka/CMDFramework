@@ -9,7 +9,7 @@
 import UIKit
 
 open class CMDSectorLabel: CMDSettableLabel {
-    override func setLabel() {
+    override open func setLabel() {
         super.setLabel()
         self.mySpacing = 2
         self.myFont = UIFont.labels.sectorLabel

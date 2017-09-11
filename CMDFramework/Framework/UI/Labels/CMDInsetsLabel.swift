@@ -40,7 +40,7 @@ import UIKit
         return contentSize
     }
     
-    override func setLabel() {
+    override open func setLabel() {
         super.setLabel()
         self.backgroundColor = UIColor.labels.insetLabelBackground
         self.myColor = UIColor.labels.insetLabelBorder

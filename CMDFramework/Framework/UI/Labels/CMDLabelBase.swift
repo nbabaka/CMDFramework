@@ -50,7 +50,7 @@ open class CMDLabelBase: UILabel {
         self.minimumScaleFactor = 0.5
     }
     
-    func setLabel() {
+    open func setLabel() {
         fatalError("Must override")
     }
 }

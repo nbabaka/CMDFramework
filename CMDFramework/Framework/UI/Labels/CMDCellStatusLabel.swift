@@ -39,7 +39,7 @@ open class CMDCellStatusLabel: CMDSettableLabel {
         }
     }
     
-    override func setLabel() {
+    override open func setLabel() {
         super.setLabel()
         self.mySpacing = 1
         self.myColor = UIColor.green

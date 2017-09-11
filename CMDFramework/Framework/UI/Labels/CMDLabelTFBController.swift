@@ -9,7 +9,7 @@
 import UIKit
 
 open class CMDLabelTFBController: CMDSettableLabel {
-    override func setLabel() {
+    override open func setLabel() {
         super.setLabel()
         self.mySpacing = 2
         self.myColor = UIColor.labels.TBFLabelTextColor

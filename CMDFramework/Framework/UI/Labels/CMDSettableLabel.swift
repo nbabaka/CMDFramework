@@ -52,7 +52,13 @@ open class CMDSettableLabel: CMDLabelBase {
         self.init(text: text, andFont: attr.font, andColor: attr.color, andSpacing: attr.spacing)
     }
     
-    override func setLabel() {
+    public func setAttribute(_ attr: CMDTextAttribute) {
+        self.mySpacing = attr.spacing
+        self.myFont = attr.font
+        self.myColor = attr.color
+    }
+    
+    override open func setLabel() {
         self.font = myFont
         self.textColor = myColor
         self.addTextSpacing(mySpacing)

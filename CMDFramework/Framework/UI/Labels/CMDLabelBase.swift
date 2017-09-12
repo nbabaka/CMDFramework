@@ -26,14 +26,14 @@ open class CMDLabelBase: UILabel {
         }
     }
     
-    convenience init(text: String) {
+    convenience public init(text: String) {
         self.init()
         self.text = text
         baseInit()
         setLabel()
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         baseInit()
         setLabel()

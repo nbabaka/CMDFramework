@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CMDFramework'
-  s.version          = '0.4.5'
+  s.version          = '0.5'
   s.summary          = 'CINEMOOD IOS Application Framework'
 
 # This description is used to generate tags and improve search results.
@@ -42,6 +42,8 @@ TODO: Add long description of the pod here.
   s.dependency 'FacebookCore'
   s.dependency 'FacebookLogin'
   s.dependency 'LGSideMenuController'
+  s.dependency 'ZDCChat/API'
+  s.requires_arc = true
 
   s.resource_bundles = {
     'Assets' => ['CMDFramework/Assets/*.xcassets'],

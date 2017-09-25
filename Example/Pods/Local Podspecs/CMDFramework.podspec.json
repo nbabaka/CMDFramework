@@ -53,12 +53,10 @@
     ],
     "LGSideMenuController": [
 
-    ],
-    "ZDCChat/API": [
-
     ]
   },
   "requires_arc": true,
+  "vendored_frameworks": "CMDFramework/Dependency/Zendesk/ZDCChatAPI.framework",
   "resource_bundles": {
     "Assets": [
       "CMDFramework/Assets/*.xcassets"

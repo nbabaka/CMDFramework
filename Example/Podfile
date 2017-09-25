@@ -12,7 +12,6 @@ target 'CMDFramework_Tests' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'LGSideMenuController'
-  pod 'ZDCChat/API'
 
   post_install do |installer|
       installer.pods_project.targets.each do |target|

@@ -42,9 +42,8 @@ TODO: Add long description of the pod here.
   s.dependency 'FacebookCore'
   s.dependency 'FacebookLogin'
   s.dependency 'LGSideMenuController'
-  s.dependency 'ZDCChat/API'
   s.requires_arc = true
-
+  s.vendored_frameworks = 'CMDFramework/Dependency/Zendesk/ZDCChatAPI.framework'
   s.resource_bundles = {
     'Assets' => ['CMDFramework/Assets/*.xcassets'],
     'Localization' => ['CMDFramework/*.lproj/*.strings'],

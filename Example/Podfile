@@ -12,6 +12,9 @@ target 'CMDFramework_Tests' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'LGSideMenuController'
+  pod 'DateToolsSwift'
+  pod 'DKImagePickerController'
+  pod 'ActiveLabel'
 
   post_install do |installer|
       installer.pods_project.targets.each do |target|

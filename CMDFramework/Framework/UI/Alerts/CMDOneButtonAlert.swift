@@ -8,7 +8,7 @@
 
 import EasyPeasy
 
-public typealias CMDOneButtonAlertBlock = (Void) -> Void
+public typealias CMDOneButtonAlertBlock = () -> Void
 open class CMDOneButtonAlert: CMDAlertViewBase {
     open var text : String {
         get {

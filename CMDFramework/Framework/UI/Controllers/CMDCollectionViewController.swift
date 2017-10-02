@@ -15,7 +15,7 @@ open class CMDCollectionViewController: CMDInitialViewController {
         refreshControl.addTarget(self, action: #selector(self.refreshOptions(_:)), for: .valueChanged)
     }
     
-    open func refreshOptions(_ sender: UIRefreshControl) {
+    @objc open func refreshOptions(_ sender: UIRefreshControl) {
         // Override
     }
 }

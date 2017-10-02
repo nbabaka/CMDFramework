@@ -20,7 +20,7 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
     public var parentVC: UIViewController?
     public let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     
-    internal var backButtonAction: ((Void) -> Void)?
+    internal var backButtonAction: (() -> Void)?
     internal var hideDelay = 4
     
     override open func viewDidLoad() {
@@ -65,7 +65,7 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         scrollView.isScrollEnabled = true
     }
     
-    public func addBackButton(withBlock block: @escaping (Void) -> Void) {
+    public func addBackButton(withBlock block: @escaping () -> Void) {
         let button = CMDBackButton()
         self.backButtonAction = block
         button.addTarget(self, action: #selector(self.handleBackButton(_:)), for: UIControlEvents.touchUpInside)
@@ -109,7 +109,7 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         self.navigationItem.leftBarButtonItem = menuButton
     }
     
-    open func menuButtonPressed(_ sender: UIBarButtonItem) {
+    @objc open func menuButtonPressed(_ sender: UIBarButtonItem) {
         // Override
     }
     
@@ -227,7 +227,7 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         view.addGestureRecognizer(tap)
     }
     
-    public func dismissKeyboard() {
+    @objc public func dismissKeyboard() {
         view.endEditing(true)
     }
     

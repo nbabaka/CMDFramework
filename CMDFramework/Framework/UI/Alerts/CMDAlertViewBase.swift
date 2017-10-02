@@ -248,7 +248,7 @@ extension UIResponder {
         UIApplication.shared.sendAction(#selector(self.findFirstResponder(sender:)), to: nil, from: nil, for: nil)
         return currentFirstResponder
     }
-    func findFirstResponder(sender: AnyObject) {
+    @objc func findFirstResponder(sender: AnyObject) {
         currentFirstResponder = self
     }
 }

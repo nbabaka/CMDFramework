@@ -23,7 +23,7 @@ open class CMDTextView: UITextView, CMDText {
         setupView()
     }
     
-    internal func handleTextViewTextDidChangeNotification(_ notification: Notification) {
+    @objc internal func handleTextViewTextDidChangeNotification(_ notification: Notification) {
         guard let object = notification.object as? CMDTextView, object === self else {
             return
         }

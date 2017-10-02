@@ -61,7 +61,7 @@ open class CMDTextInputWithValidation: CMDColoredTextInput {
         isValid = true
     }
     
-    internal func textFieldDidChange(_ textField: CMDTextInputWithValidation) {
+    @objc internal func textFieldDidChange(_ textField: CMDTextInputWithValidation) {
         if !isValid && isClearValidWithChanges {
             setValid()
         }

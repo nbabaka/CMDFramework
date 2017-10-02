@@ -35,8 +35,8 @@ public extension CMDText {
         if attributedString.length > 0 {
             let range = NSRange(location: 0, length: attributedString.length)
             addSpacing(Float(self.placeholderSpacing), toString: attributedString)
-            attributedString.addAttribute(NSFontAttributeName, value: self.placeholderFont ?? self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize), range: range)
-            attributedString.addAttribute(NSForegroundColorAttributeName, value: self.placeholderColor, range: range)
+            attributedString.addAttribute(NSAttributedStringKey.font, value: self.placeholderFont ?? self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize), range: range)
+            attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: self.placeholderColor, range: range)
         }
         return attributedString
     }
@@ -44,7 +44,7 @@ public extension CMDText {
     func addSpacing(_ spacing: Float, toString: NSMutableAttributedString) {
         if toString.length > 0 {
             let range = NSRange(location: 0, length: toString.length-1)
-            toString.addAttribute(NSKernAttributeName, value: calculateSpacingWithDevice(fromValue: spacing), range: range)
+            toString.addAttribute(NSAttributedStringKey.kern, value: calculateSpacingWithDevice(fromValue: spacing), range: range)
         }
     }
     
@@ -52,8 +52,8 @@ public extension CMDText {
         let attributedString = NSMutableAttributedString(string: text)
         let range = NSRange(location: 0, length: attributedString.length)
         addSpacing(Float(self.placeholderSpacing), toString: attributedString)
-        attributedString.addAttribute(NSFontAttributeName, value: self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize), range: range)
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: self.textColor ?? self.placeholderColor, range: range)
+        attributedString.addAttribute(NSAttributedStringKey.font, value: self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize), range: range)
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: self.textColor ?? self.placeholderColor, range: range)
         return attributedString
     }
 }

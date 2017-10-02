@@ -65,16 +65,13 @@ open class CMDPhoneField: CMDTextInputWithValidation {
     override open func deleteBackward() {
         if let lastChar = text?.characters.last {
             if lastChar.isMatchWithCharacters(" -()") {
-                if let indexNumberWithWhiteSpace = text?.characters.index((text?.endIndex)!, offsetBy: -1) {
-                    text = text?.substring(to: indexNumberWithWhiteSpace)
-                }
-                return
+                text = String(text!.dropLast())
             }
         }
         super.deleteBackward()
     }
     
-    internal override func textFieldDidChange(_ textField: UITextField) {
+    @objc internal override func textFieldDidChange(_ textField: UITextField) {
         super.textFieldDidChange(textField as! CMDTextInputWithValidation)
         checkPrefix()
         if let text = textField.text {

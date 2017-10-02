@@ -259,7 +259,7 @@ open class CMDDropList: UIButton {
         })
     }
     
-    internal func dismissableViewTapped(_ gesture: UIGestureRecognizer) {
+    @objc internal func dismissableViewTapped(_ gesture: UIGestureRecognizer) {
         cancel()
     }
     

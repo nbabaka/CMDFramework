@@ -77,7 +77,7 @@ public extension UILabel {
             let constraintSize = CGSize(width: bounds.size.width, height: CGFloat(MAXFLOAT))
             let attributedString = getAttributedStringWithSpacing(spacing)
             let range = NSRange(location: 0, length: (text ?? "").characters.count)
-            attributedString.addAttribute(NSFontAttributeName, value: proposedFont, range: range)
+            attributedString.addAttribute(NSAttributedStringKey.font, value: proposedFont, range: range)
             let labelSize = attributedString.boundingRect(with: constraintSize, options: .usesFontLeading, context: nil)
             if labelSize.width <= bounds.size.width {
                 font = proposedFont
@@ -92,7 +92,7 @@ public extension UILabel {
         let textString = text ?? ""
         let attributedString = NSMutableAttributedString(string: textString)
         if attributedString.length > 0 {
-            attributedString.addAttribute(NSKernAttributeName, value: spacing, range: NSRange(location: 0, length: attributedString.length - 1))
+            attributedString.addAttribute(NSAttributedStringKey.kern, value: spacing, range: NSRange(location: 0, length: attributedString.length - 1))
         }
         return attributedString
     }

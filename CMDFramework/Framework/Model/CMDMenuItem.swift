@@ -7,7 +7,7 @@
 //
 import LGSideMenuController
 
-public typealias CMDMenuItemActionBlock = (Void) -> Void
+public typealias CMDMenuItemActionBlock = () -> Void
 
 open class CMDMenuItem: NSObject {
     public var title: String?

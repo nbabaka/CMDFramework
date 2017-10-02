@@ -13,15 +13,6 @@ target 'CMDFramework_Tests' do
   pod 'FacebookLogin'
   pod 'LGSideMenuController'
   pod 'DateToolsSwift'
-  pod 'DKImagePickerController'
   pod 'ActiveLabel'
-
-  post_install do |installer|
-      installer.pods_project.targets.each do |target|
-          target.build_configurations.each do |config|
-              config.build_settings['SWIFT_VERSION'] = '3.0'
-          end
-      end
-  end
-  
+  pod 'DKImagePickerController'
 end

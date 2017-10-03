@@ -19,7 +19,7 @@
         <!--Delegate-->
         <scene sceneID="wE1-Nx-b5K">
             <objects>
-                <viewController storyboardIdentifier="chatController" id="sEC-9w-wyt" customClass="CMDChatViewController" customModule="CinemoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatController" id="sEC-9w-wyt" customClass="CMDChatViewController" customModule="CMDFramework" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ily-eA-OJV"/>
                         <viewControllerLayoutGuide type="bottom" id="Kw9-yu-Gfo"/>
@@ -140,7 +140,7 @@
         <!--Chat Visitor View Controller-->
         <scene sceneID="5bV-bI-7hu">
             <objects>
-                <viewController id="lmE-DI-w6G" customClass="CMDChatVisitorViewController" customModule="CinemoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lmE-DI-w6G" customClass="CMDChatVisitorViewController" customModule="CMDFramework" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gQO-aY-87n"/>
                         <viewControllerLayoutGuide type="bottom" id="Gy1-aG-biS"/>
@@ -311,7 +311,7 @@
         <!--Chat Image View Controller-->
         <scene sceneID="YGH-kw-5x2">
             <objects>
-                <viewController storyboardIdentifier="chatImage" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="EUi-Rc-rpM" customClass="CMDChatImageViewController" customModule="CinemoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatImage" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="EUi-Rc-rpM" customClass="CMDChatImageViewController" customModule="CMDFramework" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eR8-Pl-DoF"/>
                         <viewControllerLayoutGuide type="bottom" id="5im-4X-A2G"/>
@@ -343,7 +343,7 @@
         <!--Chat Offline View Controller-->
         <scene sceneID="nqJ-dJ-CBB">
             <objects>
-                <viewController id="QPL-Vl-Kyw" customClass="CMDChatOfflineViewController" customModule="CinemoodApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QPL-Vl-Kyw" customClass="CMDChatOfflineViewController" customModule="CMDFramework" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8YP-OT-o1D"/>
                         <viewControllerLayoutGuide type="bottom" id="Cql-Gl-aIp"/>

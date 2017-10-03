@@ -53,6 +53,15 @@
     ],
     "LGSideMenuController": [
 
+    ],
+    "DKImagePickerController": [
+
+    ],
+    "DateToolsSwift": [
+
+    ],
+    "ActiveLabel": [
+
     ]
   },
   "requires_arc": true,

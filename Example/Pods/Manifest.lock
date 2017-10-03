@@ -8,6 +8,9 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
   - CMDFramework (0.5):
+    - ActiveLabel
+    - DateToolsSwift
+    - DKImagePickerController
     - EasyAnimation
     - EasyPeasy
     - FacebookCore
@@ -77,7 +80,7 @@ SPEC CHECKSUMS:
   ActiveLabel: 68625f22775f51c31bb691ca8de20f1e5a3bc825
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  CMDFramework: 83e1fa21ffcb83f709f921f02e3481520f8e89bf
+  CMDFramework: 9c3cf646ed50fb6dfffa4dc11ed2c98f44d35df1
   DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
   DKImagePickerController: 6eea9f1ba2e2ca0ba0317b81d68152d07d9e877f
   EasyAnimation: 0bc71a385be3fc0239e487fb8f0dde626e6c7466

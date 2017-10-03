@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="277" id="KGk-i7-Jjw" customClass="CMDVisitorImageCell" customModule="CinemoodApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="277"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="276.66666666666669"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" translatesAutoresizingMaskIntoConstraints="NO" id="et5-5J-hqi" customClass="CMDChatCellView" customModule="CinemoodApp" customModuleProvider="target">
+                        <rect key="frame" x="108" y="4" width="200" height="268.66666666666669"/>
+                        <subviews>
+                            <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="0jS-NB-5CE">
+                                <rect key="frame" x="4" y="4" width="192" height="227"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="750" constant="227" id="5as-OO-Udj"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cnu-Qh-8Ns" customClass="CMDLoadProgress" customModule="CinemoodApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="268.66666666666669"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cnu-Qh-8Ns" firstAttribute="width" secondItem="et5-5J-hqi" secondAttribute="width" priority="750" id="8EY-YO-2Lj"/>
+                            <constraint firstItem="Cnu-Qh-8Ns" firstAttribute="centerY" secondItem="et5-5J-hqi" secondAttribute="centerY" id="Cmj-Jr-SVs"/>
+                            <constraint firstItem="0jS-NB-5CE" firstAttribute="top" secondItem="et5-5J-hqi" secondAttribute="top" constant="4" id="J2h-Dg-Oyv"/>
+                            <constraint firstAttribute="height" priority="750" constant="392" placeholder="YES" id="att-bj-l7P"/>
+                            <constraint firstAttribute="trailing" secondItem="0jS-NB-5CE" secondAttribute="trailing" constant="4" id="iz0-lY-dvS"/>
+                            <constraint firstItem="Cnu-Qh-8Ns" firstAttribute="centerX" secondItem="et5-5J-hqi" secondAttribute="centerX" id="lqS-Bf-4WJ"/>
+                            <constraint firstItem="Cnu-Qh-8Ns" firstAttribute="height" secondItem="et5-5J-hqi" secondAttribute="height" priority="750" id="sp9-22-ava"/>
+                            <constraint firstItem="0jS-NB-5CE" firstAttribute="leading" secondItem="et5-5J-hqi" secondAttribute="leading" constant="4" id="vFw-9E-P4v"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="typeString" value="visitor"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="contentView" destination="0jS-NB-5CE" id="rYq-ea-s4s"/>
+                        </connections>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="et5-5J-hqi" secondAttribute="bottom" constant="4" id="5C1-cZ-UZu"/>
+                    <constraint firstItem="et5-5J-hqi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="100" id="8HE-gD-4vR"/>
+                    <constraint firstAttribute="trailing" secondItem="et5-5J-hqi" secondAttribute="trailing" constant="12" id="Q97-HQ-FzC"/>
+                    <constraint firstAttribute="bottom" secondItem="et5-5J-hqi" secondAttribute="bottom" constant="4" id="kyh-vB-c72"/>
+                    <constraint firstItem="et5-5J-hqi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="mZY-eh-PBq"/>
+                    <constraint firstItem="et5-5J-hqi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" priority="250" constant="100" id="yzO-bP-B4O"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="heightConstraint" destination="5as-OO-Udj" id="gtJ-0E-10w"/>
+                <outlet property="imageContentView" destination="0jS-NB-5CE" id="JhK-Mq-kZV"/>
+                <outlet property="loadingProgress" destination="Cnu-Qh-8Ns" id="R8r-Mv-Ude"/>
+                <outlet property="view" destination="et5-5J-hqi" id="ujd-E7-R3m"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="-62.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -6,10 +6,10 @@
 //  Copyright © 2017 CINEMOOD Trendsetters Co. All rights reserved.
 //
 
-import ActiveLabel
+//import ActiveLabel
 
 class CMDMessageChatCell: CMDChatCell {
-    @IBOutlet var messageLabel: ActiveLabel!
+    @IBOutlet var messageLabel: UILabel!
     var textContent: String? {
         set {
             self.messageLabel.text = newValue
@@ -31,13 +31,13 @@ class CMDMessageChatCell: CMDChatCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         messageLabel.font = UIFont.chat.text
-        self.messageLabel.numberOfLines = 0
-        self.messageLabel.enabledTypes = [.url]
-        self.messageLabel.URLColor = UIColor.textColor.chatURL
-        self.messageLabel.URLSelectedColor = UIColor.textColor.chatURL
-        self.messageLabel.handleURLTap { url in
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+//        self.messageLabel.numberOfLines = 0
+//        self.messageLabel.enabledTypes = [.url]
+//        self.messageLabel.URLColor = UIColor.textColor.chatURL
+//        self.messageLabel.URLSelectedColor = UIColor.textColor.chatURL
+//        self.messageLabel.handleURLTap { url in
+//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//        }
     }
     
 }

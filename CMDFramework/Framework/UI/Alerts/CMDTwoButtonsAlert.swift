@@ -27,19 +27,16 @@ open class CMDTwoButtonsAlert: CMDAlertViewBase {
         }
     }
     
-    open var onPushLeftButtonBlock : CMDOneButtonAlertBlock? {
-        didSet {
-            leftButton.onPushButtonBlock = onPushLeftButtonBlock
-        }
-    }
-    open var onPushRightButtonBlock : CMDOneButtonAlertBlock? {
-        didSet {
-            rightButton.onPushButtonBlock = onPushRightButtonBlock
-        }
-    }
-    
     open var leftButton = CMDClassicButton()
     open var rightButton = CMDClassicButton()
+    
+    open func onPushLeftButton(_ block: CMDOneButtonAlertBlock?) {
+        leftButton.onPushButtonBlock = block
+    }
+    
+    open func onPushRightButton(_ block: CMDOneButtonAlertBlock?) {
+        rightButton.onPushButtonBlock = block
+    }
     
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -54,6 +51,6 @@ open class CMDTwoButtonsAlert: CMDAlertViewBase {
         self.addSubview(rightButton)
         leftButton <- [Left(40), Bottom(68), Height(22), Width(self.frame.width/2 - 40)]
         rightButton <- [Size().like(leftButton), Bottom(68), Right(40)]
-        self.onPushLeftButtonBlock = { self.close(.moveDown) }
+        self.onPushLeftButton { self.close(.moveDown) }
     }
 }

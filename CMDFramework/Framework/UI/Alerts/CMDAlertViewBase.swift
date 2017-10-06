@@ -9,7 +9,7 @@
 import EasyPeasy
 import EasyAnimation
 
-public typealias CMDAlertBlock = ()->Void
+public typealias CMDAlertBlock = () -> Void
 public weak var currentFirstResponder: UIResponder?
 
 open class CMDAlertViewBase: BaseView {

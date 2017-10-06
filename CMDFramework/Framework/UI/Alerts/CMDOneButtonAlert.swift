@@ -19,12 +19,6 @@ open class CMDOneButtonAlert: CMDAlertViewBase {
         }
     }
     
-    open var onPushButtonBlock : CMDOneButtonAlertBlock? {
-        didSet {
-            button.onPushButtonBlock = onPushButtonBlock
-        }
-    }
-    
     private var button = CMDBlueButton()
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -35,8 +29,12 @@ open class CMDOneButtonAlert: CMDAlertViewBase {
         button <- Height(66)
     }
     
+    open func onPushButton(_ block: @escaping CMDOneButtonAlertBlock) {
+        self.button.onPushButtonBlock = block
+    }
+    
     override open func initAdditionalViews() {
         self.addSubview(button)
-        self.onPushButtonBlock = { self.close(.moveDown) }
+        onPushButton { self.close(.moveDown) }
     }
 }

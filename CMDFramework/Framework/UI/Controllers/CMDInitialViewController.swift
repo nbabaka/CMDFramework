@@ -247,7 +247,7 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
     public func showAlert(withTitle title: String, andText text: String, andIcon icon: UIImage, andButton button: String) {
         let alert = CMDOneButtonAlert(withIcon: icon, andTitle: title, andMainText: text)
         alert.text = button
-        alert.onPushButtonBlock = {
+        alert.onPushButton {
             alert.close(.moveDown)
         }
         alert.show(.moveUp)

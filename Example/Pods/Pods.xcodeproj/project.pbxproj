@@ -570,7 +570,6 @@
 		CD4294D45123B5C56DC04D50DA458DC8 /* CMDDropListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE1E0118A668835281196CEF166D6BA /* CMDDropListItem.swift */; };
 		CD6AC2C1C2C39CD015885F82815300C4 /* FBSDKAppEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = 82492FA49A54C0FBCAE6F185AD764D87 /* FBSDKAppEvents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD7AA207F797D6DB9D8C5694E5184375 /* FBSDKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEDBD7551C45B1D3868177102A7D12 /* FBSDKButton.m */; };
-		CDAA240819E7764AF30DF7986CECE3CC /* Chat.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 8820E2C2E6B32448A2508E934F420DE5 /* Chat.storyboard */; };
 		CDB83B2512513D0C4E83424B608ECA67 /* FBSDKDynamicFrameworkLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = F9804E308527BBC94DB36D3AEB820854 /* FBSDKDynamicFrameworkLoader.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CE20185F3C86449893E0A48A44221CF3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1087C105D1BBFBF281FEB398DA6E91 /* Item.swift */; };
 		CE246560D64C5C2E0B8DBB29AF864A28 /* CMDFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B9BA2D36D729FCD71DCDCE6B0153BF /* CMDFramework-dummy.m */; };
@@ -1457,7 +1456,6 @@
 		8683BD19B4B87DFBCB040F1546EE3C5B /* FBSDKContainerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKContainerViewController.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKContainerViewController.m; sourceTree = "<group>"; };
 		868BB5F6D612C092543C0B5D6280A5B7 /* minishared.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = minishared.h; path = SSZipArchive/minizip/minishared.h; sourceTree = "<group>"; };
 		87ED70BEDE60014270D24FAB01072A6C /* Pods_CMDFramework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMDFramework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8820E2C2E6B32448A2508E934F420DE5 /* Chat.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		8838ABB0FFE2B4E51F8E4A12103F7968 /* PKHUDSystemActivityIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDSystemActivityIndicatorView.swift; path = PKHUD/PKHUDSystemActivityIndicatorView.swift; sourceTree = "<group>"; };
 		885CFA6F1FBEA593316F7207775092DD /* SSZipArchive.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = SSZipArchive/SSZipArchive.m; sourceTree = "<group>"; };
 		8870909B11CA373E58531FA6302C542B /* FBSDKTestUsersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTestUsersManager.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKTestUsersManager.h; sourceTree = "<group>"; };
@@ -2549,7 +2547,6 @@
 		56F4C68D7F9FA4DB3C2605BFA68D21A9 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				8820E2C2E6B32448A2508E934F420DE5 /* Chat.storyboard */,
 				69E0689868BE3CC43E2454E2762B0FAE /* CMDAgentImageCell.swift */,
 				2FFF33E234DA3EE3690B9C4A0670BBC0 /* CMDAgentImageCell.xib */,
 				75916DCC1270BCC3CA5379278DE9B3E2 /* CMDAgentMessageCell.swift */,
@@ -4735,7 +4732,6 @@
 				25622113BF89277163DB17A33EF7FD62 /* BaseRequest.swift in Sources */,
 				4C796F508B258858F133D78FA3D0C45C /* BaseView.swift in Sources */,
 				677C5F5DD255988C63447E6A4D1971A0 /* BaseViewController.swift in Sources */,
-				CDAA240819E7764AF30DF7986CECE3CC /* Chat.storyboard in Sources */,
 				0BD6E058FCCB7245E839EF14FB49F00B /* CMDAgentImageCell.swift in Sources */,
 				6772CAE218D037BAD47D21335E1CFC6E /* CMDAgentImageCell.xib in Sources */,
 				FA7D6DED8ADD304472FF70DF79CDFB07 /* CMDAgentMessageCell.swift in Sources */,

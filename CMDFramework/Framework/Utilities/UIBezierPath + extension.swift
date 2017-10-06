@@ -14,7 +14,14 @@ public extension CGRect{
 
 public extension CGPoint{
     public func vector(to p1:CGPoint) -> CGVector{
-        return CGVector(dx: p1.x-self.x, dy: p1.y-self.y)
+        return CGVector(dx: (p1.x-self.x).rounded(toPlace: 2), dy: (p1.y-self.y).rounded(toPlace: 2))
+    }
+}
+
+public extension CGFloat {
+    public func rounded(toPlace place: Int) -> CGFloat {
+        let divisor = pow(10.0, CGFloat(place))
+        return (self * divisor).rounded() / divisor
     }
 }
 

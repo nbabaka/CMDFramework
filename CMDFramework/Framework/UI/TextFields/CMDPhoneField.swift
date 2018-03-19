@@ -63,7 +63,7 @@ open class CMDPhoneField: CMDTextInputWithValidation {
     }
     
     override open func deleteBackward() {
-        if let lastChar = text?.characters.last {
+        if let lastChar = text?.last {
             if lastChar.isMatchWithCharacters(" -()") {
                 text = String(text!.dropLast())
             }
@@ -77,7 +77,7 @@ open class CMDPhoneField: CMDTextInputWithValidation {
         if let text = textField.text {
             let delCharsText = text.withReplacedCharacters(" -()", by: "")
             let parsedNumber = try? googleLab.parse(delCharsText, defaultRegion: nil)
-            let f = NBAsYouTypeFormatter(regionCodeForTest: googleLab.getRegionCode(for: parsedNumber))
+            let f = NBAsYouTypeFormatter(regionCode: googleLab.getRegionCode(for: parsedNumber))
             self.text = f?.inputString(delCharsText)
             tryToChangeFlag(withParsedNumber: parsedNumber)
             isValidated = googleLab.isValidNumber(parsedNumber)

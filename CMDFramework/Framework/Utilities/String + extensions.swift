@@ -49,7 +49,7 @@ public extension String {
     
     public func isMatch(regex: String, options: NSRegularExpression.Options) -> Bool {
         let exp = try! NSRegularExpression(pattern: regex, options: options)
-        let matchCount = exp.matches(in: self, options: [], range: NSRange(location: 0, length:  self.characters.count))
+        let matchCount = exp.matches(in: self, options: [], range: NSRange(location: 0, length:  self.count))
         return matchCount.count > 0
     }
     
@@ -60,17 +60,17 @@ public extension String {
     
     public func isValidEmail() -> Bool {
         let regex = try? NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}", options: .caseInsensitive)
-        return regex?.firstMatch(in: self, options: [], range: NSMakeRange(0, self.characters.count)) != nil
+        return regex?.firstMatch(in: self, options: [], range: NSMakeRange(0, self.count)) != nil
     }
     
     public func isValidPhone() -> Bool {
         let regex = try? NSRegularExpression(pattern: "^\\+[0-9]+$", options: .caseInsensitive)
-        return regex?.firstMatch(in: self, options: [], range: NSMakeRange(0, self.characters.count)) != nil
+        return regex?.firstMatch(in: self, options: [], range: NSMakeRange(0, self.count)) != nil
     }
     
     public static func random(length: Int = 32) -> String {
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let randomLength = UInt32(letters.characters.count)
+        let randomLength = UInt32(letters.count)
         
         let randomString: String = (0 ..< length).reduce(String()) { accum, _ in
             let randomOffset = arc4random_uniform(randomLength)
@@ -98,7 +98,7 @@ public extension String {
     }
     
     public func insert(string: String, index: Int) -> String {
-        return  String(self.characters.prefix(index)) + string + String(self.characters.suffix(self.characters.count-index))
+        return  String(self.prefix(index)) + string + String(self.suffix(self.count-index))
     }
     
     public func intIndex(_ index: Index) -> Int {
@@ -111,7 +111,7 @@ public extension String {
 public extension Character {
     public func isMatchWithCharacters(_ characters: String) -> Bool {
         var flag = false
-        characters.characters.forEach {
+        characters.forEach {
             if $0 == self {
                 flag = true
             }

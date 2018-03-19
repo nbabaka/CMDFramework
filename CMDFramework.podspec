@@ -36,7 +36,7 @@ TODO: Add long description of the pod here.
   s.dependency 'SDWebImage'
   s.dependency 'Restofire'
   s.dependency 'SSZipArchive'
-  s.dependency 'SwiftyJSON', '~> 3.1'
+  s.dependency 'SwiftyJSON'
   s.dependency 'PKHUD'
   s.dependency 'EasyAnimation'
   s.dependency 'FacebookCore'

@@ -35,6 +35,7 @@ public extension CMDText {
         if attributedString.length > 0 {
             let range = NSRange(location: 0, length: attributedString.length)
             addSpacing(Float(self.placeholderSpacing), toString: attributedString)
+            
             attributedString.addAttribute(NSAttributedStringKey.font, value: self.placeholderFont ?? self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize), range: range)
             attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: self.placeholderColor, range: range)
         }

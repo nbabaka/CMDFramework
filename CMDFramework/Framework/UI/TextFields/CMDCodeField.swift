@@ -24,7 +24,7 @@ open class CMDCodeField: BaseView, UITextFieldDelegate {
     public var code: String? {
         let textArray = fieldsArray.map {$0.text} as! [String]
         let text = textArray.joined()
-        return text.characters.count == countOfFields ? text : nil
+        return text.count == countOfFields ? text : nil
     }
     
     public var countOfSpacing: Int {
@@ -137,7 +137,7 @@ open class CMDCodeField: BaseView, UITextFieldDelegate {
             guard let code = self.code else {
                 return
             }
-            if code.characters.count == countOfFields {
+            if code.count == countOfFields {
                 completeBlock?(code)
             }
         }
@@ -146,7 +146,7 @@ open class CMDCodeField: BaseView, UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let nsString = NSString(string: textField.text!)
         let newText = nsString.replacingCharacters(in: range, with: string)
-        let result = newText.characters.count <= limitCount
+        let result = newText.count <= limitCount
         if result == false {
             guard let index = fieldsArray.index(of: textField as! CMDTextInput) else {
                 return result

@@ -24,7 +24,7 @@ public struct BaseRequest: CMNDRequstable {
         let sessionConfiguration = URLSessionConfiguration.default
         var headers = Alamofire.SessionManager.defaultHTTPHeaders
         if let userAgent = headers["User-Agent"] {
-            if let index = userAgent.characters.index(of: "(") {
+            if let index = userAgent.index(of: "(") {
                 headers["x-install-app-id"] = UserDefaults.standard.string(forKey: "installID")
                 headers["User-Agent"]  = userAgent.insert(string: "\(UIDevice.current.model); ", index: userAgent.intIndex(index) + 1)
             }

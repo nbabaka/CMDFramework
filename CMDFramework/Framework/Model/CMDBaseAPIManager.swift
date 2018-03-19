@@ -49,12 +49,12 @@ open class CMDBaseAPIManager: NSObject {
     }
     
     open func sendRequest(_ request: BaseRequest, onCompleteBlock: APIResponse?) {
-        request.executeTask() { [weak self] in
+        request.execute() { [weak self] in
             self?.checkResponseAndComplete(response: $0, onComplete: onCompleteBlock)
         }
     }
     
-    open func cancelOperation(request: DataRequestOperation<BaseRequest>) {
+    open func cancelOperation(request: AOperation<BaseRequest>) {
         request.cancel()
     }
     

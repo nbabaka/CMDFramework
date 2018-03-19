@@ -9,7 +9,10 @@
 import Restofire
 import Alamofire
 
-public struct BaseRequest: Requestable, HTTPConfigurable, HTTPValidatable, HTTPRetryable {
+protocol CMNDRequstable: Requestable, HTTPConfigurable, HTTPValidatable, HTTPRetryable {}
+
+public struct BaseRequest: CMNDRequstable {
+    public typealias Response = Any
     public typealias Model = Any
     public var path: String = ""
     public var parameters: Any?
@@ -102,5 +105,11 @@ extension HTTPRetryable {
         retry.retryInterval = 5
         retry.maxRetryAttempts = 2
         return retry
+    }
+}
+
+extension Restofire.DataResponseSerializable where Response == Any {
+    public var responseSerializer: DataResponseSerializer<Response> {
+        return DataRequest.jsonResponseSerializer()
     }
 }

@@ -1,7 +1,5 @@
-![Restofire: A Protocol Oriented Networking Abstraction Layer in Swift](https://raw.githubusercontent.com/Restofire/Restofire/master/Assets/restofire.png)
-
-## Restofire
-
+![Restofire: A Protocol Oriented Networking Abstraction Layer in Swift](Assets/restofire.png)
+---
 [![Platforms](https://img.shields.io/cocoapods/p/Restofire.svg)](https://cocoapods.org/pods/Restofire)
 [![License](https://img.shields.io/cocoapods/l/Restofire.svg)](https://raw.githubusercontent.com/Restofire/Restofire/master/LICENSE)
 
@@ -19,32 +17,35 @@ Restofire is a protocol oriented network abstraction layer in swift that is buil
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Architecture](#architecture)
 - [Usage](#usage)
-- [Examples](#examples)
 - [License](#license)
 
 ## Features
 
-- [x] No Learning Curve
-- [x] Default Configuration for Base URL / headers / parameters etc
-- [x] Multiple Configurations
-- [x] Single Request Configuration
-- [x] Custom Response Serializer
+- [x] Global Configuration for host / headers / parameters etc
+- [x] Group Configurations
+- [x] Per Request Configuration
 - [x] Authentication
 - [x] Response Validations
-- [x] Request NSOperation
-- [x] RequestEventuallyOperation with Auto Retry
+- [x] Custom Response Serializers like JSONDecodable
+- [x] Isolate Network Requests from ViewControllers
+- [x] Auto retry based on URLError codes
+- [x] Request eventually when network is reachable
+- [x] NSOperations
 - [x] [Complete Documentation](http://restofire.github.io/Restofire/)
-- [x] [Tutorial](http://blog.rahulkatariya.me/2016/05/11/getting-started-swifter-http-networking-with-restofire/)
 
 ## Requirements
 
 - iOS 8.0+ / Mac OS X 10.10+ / tvOS 9.0+ / watchOS 2.0+
-- Xcode 8.1+
+- Xcode 9
+- Swift 4
 
 ## Installation
 
-### CocoaPods
+### Dependency Managers
+<details>
+  <summary><strong>CocoaPods</strong></summary>
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
 
@@ -52,16 +53,14 @@ Restofire is a protocol oriented network abstraction layer in swift that is buil
 $ gem install cocoapods
 ```
 
-> CocoaPods 1.2.0+ is required to build Restofire 2.2.0+.
-
 To integrate Restofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '8.0'
 use_frameworks!
 
-pod 'Restofire', '~> 2.2'
+pod 'Restofire', '~> 4.0.0'
 ```
 
 Then, run the following command:
@@ -70,7 +69,10 @@ Then, run the following command:
 $ pod install
 ```
 
-### Carthage
+</details>
+
+<details>
+  <summary><strong>Carthage</strong></summary>
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
 
@@ -84,9 +86,13 @@ $ brew install carthage
 To integrate Restofire into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "RahulKatariya/Restofire" ~> 2.2
+github "Restofire/Restofire" ~> 4.0.0
 ```
-### Swift Package Manager
+
+</details>
+
+<details>
+  <summary><strong>Swift Package Manager</strong></summary>
 
 To use Restofire as a [Swift Package Manager](https://swift.org/package-manager/) package just add the following in your Package.swift file.
 
@@ -96,16 +102,18 @@ import PackageDescription
 let package = Package(
     name: "HelloRestofire",
     dependencies: [
-        .Package(url: "https://github.com/Restofire/Restofire.git", majorVersion: 2)
+        .Package(url: "https://github.com/Restofire/Restofire.git", .upToNextMajor(from: "4.0.0"))
     ]
 )
 ```
+</details>
 
 ### Manually
 
 If you prefer not to use either of the aforementioned dependency managers, you can integrate Restofire into your project manually.
 
-#### Git Submodules
+<details>
+  <summary><strong>Git Submodules</strong></summary><p>
 
 - Open up Terminal, `cd` into your top-level project directory, and run the following command "if" your project is not initialized as a git repository:
 
@@ -138,7 +146,10 @@ $ git submodule update --init --recursive
 
 > The `Restofire.framework` is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
 
-#### Embeded Binaries
+</p></details>
+
+<details>
+  <summary><strong>Embeded Binaries</strong></summary><p>
 
 - Download the latest release from https://github.com/Restofire/Restofire/releases
 - Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
@@ -147,195 +158,86 @@ $ git submodule update --init --recursive
 - Add the downloaded `Restofire.framework` & `Alamofire.framework`.
 - And that's it!
 
----
+</p></details>
 
-## Usage
+## Architecture
 
-### Global Configuration
+### Two Layered Architecture
+
+![Architecture](Assets/architecture.jpeg)
+
+- **Alamofire Layer** — consists of protocols for Request, Download and Upload to construct the respective Alamofire.Request instance. All Alamofire Protocols have a prefix `A`.
 
 ```swift
-import Restofire
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-
-        Restofire.defaultConfiguration.baseURL = "http://www.mocky.io/v2/"
-        Restofire.defaultConfiguration.logging = true
-
-        return true
-  }
-
+/// Alamofire
+Alamofire.request("https://httpbin.org/get").responseJSON { response in
+    print("Alamofire: -", response.value ?? "nil")
 }
-```
 
-### Creating a Service
+/// Using Restofire as an API Client on top of Alamofire
+Configuration.default.host = "httpbin.org"
 
-```swift
+struct GetService: ARequestable {
+    var path: String? = "get"
+}
 
-import Restofire
-
-struct PersonGETService: Requestable {
-
-    typealias Model = [String: Any]
-    var path: String = "56c2cc70120000c12673f1b5"
-
+GetService().request.responseJSON { response in
+    print("Restofire: -", response.value ?? "nil")
 }
 
 ```
 
-### Consuming the Service
+- **Restofire Layer** — consists of protocols for Request, Download and Upload to construct the respective RequestOperation instance from the Alamofire.Request and support features like AutoRetry, WaitForConnectivity, Automatic ResponseSerialization from associatedType etc.
+
+### Configurations
+
+#### Three levels of configuration
+
+- **Global Configuration** – The global configuration will be applied to all the requests. These include values like scheme, host, version, headers, sessionManager, callbackQueue, maxRetryCount, waitsForConnectivity etc.
+
+```swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
+    Restofire.Configuration.default.host = "httpbin.org"
+    Restofire.Retry.default.retryErrorCodes = [.requestTimedOut,.networkConnectionLost]
+
+    return true
+}
+```
+
+- **Group Configuration** – The group configuration inherits all the values from the global configuration. It can be used to group requests that have same behaviour but are different from the global configuration. For instance, If you have more than one host or if your global configuration has default url session and some requests require you to use ephemeral URL session.
 
 ```swift
 import Restofire
 
-class ViewController: UIViewController {
+protocol NYConfigurable: Configurable {}
 
-    var person: [String: Any]!
-    var requestOp: DataRequestOperation<PersonGETService>!
+extension NYConfigurable {
 
-    func getPerson() {
-        requestOp = PersonGETService().executeTask() {
-            if let value = $0.result.value {
-                self.person = value
-            }
-        }
-    }
-
-    deinit {
-        requestOp.cancel()
-    }
-
-}
-```
-
-### URL Level Configuration
-
-```swift
-
-protocol HTTPBinConfigurable: Configurable { }
-
-extension HTTPBinConfigurable {
-
-    var configuration: Configuration {
-        var config = Configuration()
-        config.baseURL = "https://httpbin.org/"
-        config.logging = Restofire.defaultConfiguration.logging
-        return config
+    public var configuration: Configuration {
+        var configuration = Configuration.default
+        configuration.scheme = "http://"
+        configuration.host = "api.nytimes.com/svc/movies"
+        configuration.version = "v2"
+        return configuration
     }
 
 }
 
-protocol HTTPBinValidatable: Validatable { }
-
-extension HTTPBinValidatable {
-
-  var validation: Validation {
-    var validation = Validation()
-    validation.acceptableStatusCodes = Array(200..<300)
-    validation.acceptableContentTypes = ["application/json"]
-    return validation
-  }
-
-}
-
-
-protocol HTTPBinRetryable: Retryable { }
-
-extension HTTPBinRetryable {
-
-  var retry: Retry {
-    var retry = Retry()
-    retry.retryErrorCodes = [.timedOut,.networkConnectionLost]
-    retry.retryInterval = 20
-    retry.maxRetryAttempts = 10
-    return retry
-  }
-
-}
-
+protocol NYRequestable: Requestable, NYConfigurable {}
 ```
 
-### Creating the Service
+- **Per Request Configuration** – The request configuration inherits all the values from the group configuration or directly from the global configuration.
 
 ```swift
-
 import Restofire
-import Alamofire
 
-struct HTTPBinPersonGETService: Requestable, HTTPBinConfigurable, HTTPBinValidatable, HTTPBinRetryable {
+struct MoviesReviewGETService: NYRequestable {
 
-    typealias Model = [String: Any]
-    let path: String = "get"
-    let encoding: ParameterEncoding = URLEncoding.default
+    typealias Response = [MovieReview]
+    var path: String?
     var parameters: Any?
-
-    init(parameters: Any?) {
-        self.parameters = parameters
-    }
-
-}
-
-
-```
-
-### Consuming the Service
-
-```swift
-import Restofire
-
-class ViewController: UIViewController {
-
-    var person: [String: Any]!
-    var requestOp: DataRequestOperation<HTTPBinPersonGETService>!
-
-    func getPerson() {
-        requestOp = HTTPBinPersonGETService(parameters: ["name": "Rahul Katariya"]).executeTask() {
-            if let value = $0.result.value {
-                self.person = value
-            }
-        }
-    }
-
-    deinit {
-        requestOp.cancel()
-    }
-
-}
-```
-
-### Request Level Configuration
-
-```swift
-
-import Restofire
-import Alamofire
-
-struct MoviesReviewGETService: Requestable {
-
-    typealias Model = Any
-    var host: String = "http://api.nytimes.com/svc/movies/v2/"
-    var path: String = "reviews/"
-    var parameters: Any?
-    var encoding: ParameterEncoding = URLEncoding.default
-    var method: Alamofire.HTTPMethod = .get
-    var headers: [String: String]? = ["Content-Type": "application/json"]
-    var manager: Alamofire.SessionManager = {
-        let sessionConfiguration = URLSessionConfiguration.default
-        sessionConfiguration.timeoutIntervalForRequest = 7
-        sessionConfiguration.timeoutIntervalForResource = 7
-        sessionConfiguration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
-        return Alamofire.SessionManager(configuration: sessionConfiguration)
-    }()
-    var queue: DispatchQueue? = DispatchQueue.main
-    var logging: Bool = Restofire.defaultConfiguration.logging
-    var credential: URLCredential? = URLCredential(user: "user", password: "password", persistence: .forSession)
-    var acceptableStatusCodes: [Int]? = Array(200..<300)
-    var acceptableContentTypes: [String]? = ["application/json"]
-    var retryErrorCodes: Set<URLError.Code> = [.timedOut,.networkConnectionLost]
-    var retryInterval: TimeInterval = 20
-    var maxRetryAttempts: Int = 10
 
     init(path: String, parameters: Any) {
         self.path += path
@@ -343,128 +245,113 @@ struct MoviesReviewGETService: Requestable {
     }
 
 }
+```
 
-// MARK: - Caching
-import RealmSwift
-import SwiftyJSON
+## Usage
 
-extension MoviesReviewGETService {
+### Making a Request
 
-    func didCompleteRequestWithDataResponse(dataResponse: DataResponse<Model>) {
-        guard let model = response.result.value else { return }
-        let realm = try! Realm()
-        let jsonMovieReview = JSON(model)
-        if let results = jsonMovieReview["results"].array {
-            for result in results {
-                let movieReview = MovieReview()
-                movieReview.displayTitle = result["display_title"].stringValue
-                movieReview.summary = result["summary_short"].stringValue
-                try! realm.write {
-                    realm.add(movieReview, update: true)
-                }
+`Requestable` gives completion handler to enable making requests and receive response.
+
+```swift
+import Restofire
+
+class ViewController: UITableViewController {
+
+    var movieReviews: [MovieReview]!
+    var requestOp: RequestOperation<MoviesReviewGETService>!
+
+    func getReviews() {
+        requestOp = MoviesReviewGETService(parameters: ["name": "Rahul Katariya"]).execute() {
+            if let value = $0.result.value {
+                self.movieReviews = value
             }
         }
     }
 
-}
+    deinit {
+        requestOp.cancel()
+    }
 
+}
 ```
 
-### RequestEventually Service
+### Isolating Network Requests from UIViewControllers
+
+`Requestable` gives delegate methods to enable making requests from anywhere which you can use to store data in your cache.
 
 ```swift
-
 import Restofire
 
-class MoviesReviewTableViewController: UITableViewController {
+struct MoviesReviewGETService: NYRequestable {
 
-  let realm = try! Realm()
-  var results: Results<MovieReview>!
-  var notificationToken: NotificationToken? = nil
+    ...
 
-  override func viewDidLoad() {
-      super.viewDidLoad()
+    static func loadMoviews() {
+      MoviesReviewGETService(parameters: ["name": "Rahul Katariya"])
+    }
 
-      MoviesReviewGETService(path: "all.json", parameters: ["api-key":"sample-key"])
-          .executeTaskEventually()
-
-      results = realm.objects(MovieReview)
-
-      notificationToken = results.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
-          guard let _self = self else { return }
-          switch changes {
-          case .Initial, .Update(_, deletions: _, insertions: _, modifications: _):
-              _self.results = _self.realm.objects(MovieReview)
-              _self.tableView.reloadData()
-          default:
-              break
-          }
-      }
-
-  }
-
-  deinit {
-      notificationToken = nil
-  }
+    func request(_ request: RequestOperation<MoviesReviewGETService>, didCompleteWithValue value: [MovieReview]) {
+      // Here you can store the results into your cache and then listen for changes inside your view controller.
+    }
 
 }
-
 ```
 
-## Examples
+### Custom Response Serializers
 
-* [String Response Service](https://github.com/Restofire/Restofire/wiki/String-Response-Service-Example)
+- **Decodable**
 
-    ```json
-    "Restofire is Awesome"
-    ```
-* [Int Response Service](https://github.com/Restofire/Restofire/wiki/Int-Response-Service-Example)
+By adding the following snippet in your project, All `Requestable` associatedType Response as `Decodable` will be decoded with JSONDecoder.
 
-    ```json
-    123456789
-    ```
-* [Float Response Service](https://github.com/Restofire/Restofire/wiki/Float-Response-Service-Example)
+```swift
+import Restofire
 
-    ```json
-    12345.6789
-    ```
-* [Bool Response Service](https://github.com/Restofire/Restofire/wiki/Bool-Response-Service-Example)
+extension Restofire.DataResponseSerializable where Response: Decodable {
 
-    ```json
-    true
-    ```
-* [Void Response Service](https://github.com/Restofire/Restofire/wiki/Void-Response-Service-Example)
-
-    ```json
-    {}
-    ```
-* [Array Response Service](https://github.com/Restofire/Restofire/wiki/Array-Response-Service-Example)
-
-    ```json
-    ["Restofire","is","Awesome"]
-    ```
-* [JSON Response Service](https://github.com/Restofire/Restofire/wiki/JSON-Response-Service-Example)
-
-    ```json
-    {
-      "id" : 12345,
-      "name" : "Rahul Katariya"
+    public var responseSerializer: DataResponseSerializer<Response> {
+        return DataRequest.JSONDecodableResponseSerializer()
     }
-    ```
-* [JSON Array Response Service](https://github.com/Restofire/Restofire/wiki/JSON-Array-Response-Service-Example)
 
-    ```json
-    [
-      {
-        "id" : 12345,
-        "name" : "Rahul Katariya"
-      },
-      {
-        "id" : 12346,
-        "name" : "Aar Kay"
-      }
-    ]
-    ```
+}
+```
+
+- **JSON**
+
+By adding the following snippet in your project, All `Requestable` associatedType Response as `Any` will be decoded with NSJSONSerialization.
+
+```swift
+import Restofire
+
+extension Restofire.DataResponseSerializable where Response == Any {
+
+    public var responseSerializer: DataResponseSerializer<Response> {
+        return DataRequest.jsonResponseSerializer()
+    }
+
+}
+```
+
+### Wait for Internet Connectivity
+
+`Requestable` gives you a property waitsForConnectivity which can be set to true. This will make the first request regardless of the internet connectivity. If the request fails due to .notConnectedToInternet, it will retry the request when internet connection is established.
+
+```swift
+struct PushTokenPutService: Requestable {
+
+    typealias Response = Data
+    ...
+    var waitsForConnectivity: Bool = true
+
+}
+```
+# Contributing
+
+Issues and pull requests are welcome!
+
+# Author
+
+Rahul Katariya [@rahulkatariya91](https://twitter.com/rahulkatariya91)
 
 ## License
 

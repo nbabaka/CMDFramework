@@ -13,5 +13,4 @@ target 'CMDFramework_Tests' do
   pod 'FacebookLogin'
   pod 'LGSideMenuController'
   pod 'DateToolsSwift'
-  pod 'DKImagePickerController'
 end

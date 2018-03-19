@@ -7,8 +7,6 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
   - CMDFramework (0.5):
-    - DateToolsSwift
-    - DKImagePickerController
     - EasyAnimation
     - EasyPeasy
     - FacebookCore
@@ -21,11 +19,6 @@ PODS:
     - SSZipArchive
     - SwiftyJSON (~> 3.1)
   - DateToolsSwift (2.0.3)
-  - DKImagePickerController (3.8.1):
-    - DKImagePickerController/Camera (= 3.8.1)
-    - DKImagePickerController/ImageManager (= 3.8.1)
-  - DKImagePickerController/Camera (3.8.1)
-  - DKImagePickerController/ImageManager (3.8.1)
   - EasyAnimation (2.0.2)
   - EasyPeasy (1.6.0)
   - FacebookCore (0.3.0):
@@ -56,7 +49,6 @@ PODS:
 DEPENDENCIES:
   - CMDFramework (from `../`)
   - DateToolsSwift
-  - DKImagePickerController
   - EasyAnimation
   - EasyPeasy
   - FacebookCore
@@ -76,9 +68,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  CMDFramework: 8518ed9ffde07e72d78a0b9ac073e8d6b693fdb1
+  CMDFramework: 3db8108e596265315cfbee6fc4a7aee58fb8e3db
   DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
-  DKImagePickerController: 51ad6ee2ba05414bb741db54a72cd7f4fb178e34
   EasyAnimation: 977ef673efe8ce62447807eedb380a77b189dc80
   EasyPeasy: aef0a77d7e7636d6b5e046194bc911b0a8d73c88
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
@@ -93,6 +84,6 @@ SPEC CHECKSUMS:
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 8cf2b4001e7b1bd3b61d19acee22adc4d44c593d
+PODFILE CHECKSUM: 82fbf8bac36d5944f57f6b5bad85094524a65ee2
 
 COCOAPODS: 1.4.0

@@ -6,7 +6,7 @@ target 'CMDFramework_Tests' do
   pod 'Restofire'
   pod 'SDWebImage'
   pod 'SSZipArchive'
-  pod 'SwiftyJSON', '~> 3.1'
+  pod 'SwiftyJSON'
   pod 'PKHUD'
   pod 'EasyAnimation'
   pod 'FacebookCore'

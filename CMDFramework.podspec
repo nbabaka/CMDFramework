@@ -42,8 +42,6 @@ TODO: Add long description of the pod here.
   s.dependency 'FacebookCore'
   s.dependency 'FacebookLogin'
   s.dependency 'LGSideMenuController'
-  s.dependency 'DKImagePickerController'
-  s.dependency 'DateToolsSwift'
 
   s.requires_arc = true
   s.vendored_frameworks = 'CMDFramework/Dependency/Zendesk/ZDCChatAPI.framework'

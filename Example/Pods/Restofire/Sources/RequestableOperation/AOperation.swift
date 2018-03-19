@@ -34,12 +34,12 @@ open class AOperation<R: Configurable>: Operation {
         }
     }
     lazy var requestType: RequestType = {
-        RequestType(request: request)
+        RequestType(request: self.request)
     }()
     
     #if !os(watchOS)
     lazy var reachability: NetworkReachability = {
-        return NetworkReachability(configurable: configurable)
+        return NetworkReachability(configurable: self.configurable)
     }()
     #endif
     

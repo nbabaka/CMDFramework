@@ -5,10 +5,11 @@
 # Any lines starting with a # are optional, but their use is encouraged
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
 #
+swift_version = 4.0
 
 Pod::Spec.new do |s|
   s.name             = 'CMDFramework'
-  s.version          = '0.5'
+  s.version          = '0.6.0'
   s.summary          = 'CINEMOOD IOS Application Framework'
 
 # This description is used to generate tags and improve search results.

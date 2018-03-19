@@ -27,6 +27,7 @@ public struct DeviceType
     public static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
     public static let IS_IPAD_PRO_9_7      = IS_IPAD
     public static let IS_IPAD_PRO_12_9     = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1366.0
+    public static let IS_IPHONEX           = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 812.0
 }
 
 public func calculateSpacingWithDevice(fromValue spacing: Float) -> Float {
@@ -88,3 +89,4 @@ public func getImageFromBundle(name: String, withClass: AnyClass) -> UIImage {
     }
     return UIImage()
 }
+

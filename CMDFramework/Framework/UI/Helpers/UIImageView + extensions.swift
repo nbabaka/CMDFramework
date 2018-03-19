@@ -14,7 +14,7 @@ public extension UIImageView {
             return
         }
         addImagesForAnimation(atPath: filePath, andFilename: filename, andType: type, andReverse: reverse)
-
+        
     }
     
     public func loadImages(withBundleName bundle: String, andWithZipName zipname: String, andImageType type: String, andReverse reverse: Bool) {
@@ -33,14 +33,17 @@ public extension UIImageView {
     private func addImagesForAnimation(atPath path: String, andFilename filename: String, andType type: String, andReverse reverse: Bool) {
         var imageArray = [UIImage]()
         let fileManager = FileManager.default
-        let enumerator:FileManager.DirectoryEnumerator = fileManager.enumerator(atPath: path)!
-        
-        while let element = enumerator.nextObject() as? String {
-            if element.isMatch(regex: "^" + filename + "[_]*[0-9]*." + type + "$", options: .caseInsensitive) {
-                if let img = returnImage(UIImage(contentsOfFile: path + "/" + element), withReverse: reverse) {
-                    imageArray.append(img)
+        do {
+            let files = try fileManager.contentsOfDirectory(atPath: path).sorted()
+            files.forEach {
+                if $0.isMatch(regex: "^" + filename + "[_]*[0-9]*." + type + "$", options: .caseInsensitive) {
+                    if let img = returnImage(UIImage(contentsOfFile: path + "/" + $0), withReverse: reverse) {
+                        imageArray.append(img)
+                    }
                 }
             }
+        } catch let error {
+            print ("Something wrong with files \(error)")
         }
         
         if imageArray.count > 0 {
@@ -71,3 +74,4 @@ public extension UIImageView {
         }
     }
 }
+

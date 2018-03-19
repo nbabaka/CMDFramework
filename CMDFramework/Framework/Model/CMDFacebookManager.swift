@@ -56,7 +56,7 @@ open class CMDFacebookManager: NSObject {
     public func login(controller: UIViewController, onComplete: CMDFacebookSuccessBlock?, onFailed: CMDFacebookFailedBlock? = nil) {
         let loginManager = LoginManager()
         loginManager.logOut()
-        loginManager.logIn([.publicProfile, .email], viewController: controller) { loginResult in
+        loginManager.logIn(readPermissions: [ReadPermission.publicProfile, ReadPermission.email], viewController: controller) { loginResult in
             switch loginResult {
             case .failed(let error):
                 print(error)

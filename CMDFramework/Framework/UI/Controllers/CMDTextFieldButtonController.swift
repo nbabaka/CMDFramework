@@ -42,17 +42,19 @@ open class CMDTextFieldButtonController: CMDInitialViewController {
     
     open func setOldIPhoneConstraints() {
         if DeviceType.IS_IPHONE_5_OR_LESS {
-            self.view.easy_clear()
+            self.view.easy.clear()
             let tempField = fieldView != nil ? fieldView : field
             if let currentField = tempField {
-                currentField.easy_clear()
-                currentField <- Height(55)
-                currentField <- CenterY(-100)
-                currentField <- [Left(15), Right(15)]
+                currentField.easy.layout (Height(55),
+                                          CenterY(-100),
+                                          Left(15),
+                                          Right(15))
             
                 if let currentText = self.label {
-                    currentText.easy_clear()
-                    currentText <- [Left(8), Right(8), Bottom(18).to(currentField)]
+                    currentText.easy.clear()
+                    currentText.easy.layout(Left(8),
+                                            Right(8),
+                                            Bottom(18).to(currentField))
                 }
             }
             self.view.layoutIfNeeded()

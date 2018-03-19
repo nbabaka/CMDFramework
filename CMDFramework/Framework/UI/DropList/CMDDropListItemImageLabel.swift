@@ -31,10 +31,14 @@ open class CMDDropListItemImageLabel: CMDDropListItem {
     }
     
     override open func setupConstraints() {
-        title?.easy_clear()
-        imageView?.easy_clear()
-        imageView! <- [CenterY(), Left(5), Width(30), Height(22)]
-        title! <- [CenterY(), Left(15).to(imageView!)]
+        title?.easy.clear()
+        imageView?.easy.clear()
+        imageView?.easy.layout(CenterY(),
+                               Left(5),
+                               Width(30),
+                               Height(22))
+        title?.easy.layout(CenterY(),
+                           Left(15).to(imageView!))
         self.layoutIfNeeded()
         self.updateConstraintsIfNeeded()
     }

@@ -93,15 +93,18 @@ open class CMDAlertViewBase: BaseView {
     
     open func initConstraints() {
         if let iconImageView = self.iconImage {
-            iconImageView <- [Size((iconImageView.image?.size)!), Left(40), CenterY(-140)]
-            titleLabel <- [Top(18).to(iconImageView)]
+            iconImageView.easy.layout(Size((iconImageView.image?.size)!),
+                                      Left(40),
+                                      CenterY(-140))
+            titleLabel.easy.layout(Top(18).to(iconImageView))
         } else {
-            titleLabel <- CenterY(-120)
+            titleLabel.easy.layout(CenterY(-120))
         }
-        titleLabel <- Left(40)
-        titleLabel <- Right(8)
-        textLabel <- [Left(40), Top(19).to(titleLabel)]
-        textLabel <- Right(8)
+        titleLabel.easy.layout(Left(40),
+                               Right(8))
+        textLabel.easy.layout(Left(40),
+                              Top(19).to(titleLabel),
+                              Right(8))
         setNeedsUpdateConstraints()
     }
     

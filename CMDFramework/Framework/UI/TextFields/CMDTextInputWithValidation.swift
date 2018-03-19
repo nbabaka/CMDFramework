@@ -35,10 +35,10 @@ open class CMDTextInputWithValidation: CMDColoredTextInput {
         super.layoutSubviews()
         validLabel.removeFromSuperview()
         self.superview?.addSubview(validLabel)
-        validLabel <- Width().like(self)
-        validLabel <- Height(15)
-        validLabel <- CenterX()
-        validLabel <- Top(8).to(self)
+        validLabel.easy.layout(Width().like(self),
+                               Height(15),
+                               CenterX(),
+                               Top(8).to(self))
     }
     
     public func setInvalidWithText(_ text: String) {

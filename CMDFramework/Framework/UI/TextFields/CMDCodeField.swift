@@ -46,10 +46,10 @@ open class CMDCodeField: BaseView, UITextFieldDelegate {
         validLabel.textColor = UIColor.textFields.validationLabel
         validLabel.mySpacing = 1
         self.addSubview(validLabel)
-        validLabel <- Width(CGFloat(countOfFields) * size.width + CGFloat(countOfSpacing) * spacing)
-        validLabel <- Height(13)
-        validLabel <- CenterX()
-        validLabel <- Top(8).to(fieldsArray.first!)
+        validLabel.easy.layout(Width(CGFloat(countOfFields) * size.width + CGFloat(countOfSpacing) * spacing),
+                               Height(13),
+                               CenterX(),
+                               Top(8).to(fieldsArray.first!))
         validLabel.alpha = 0
     }
     
@@ -75,14 +75,14 @@ open class CMDCodeField: BaseView, UITextFieldDelegate {
         codeField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         self.addSubview(codeField)
 
-        codeField <- Top(0)
-        codeField <- Width(size.width)
-        codeField <- Height(size.height)
+        codeField.easy.layout(Top(0),
+                              Width(size.width),
+                              Height(size.height))
 
         if fieldsArray.count == 0 {
-            codeField <- CenterX(-(CGFloat(countOfFields) * size.width + CGFloat(countOfSpacing) * spacing) / 2 + size.width / 2)
+            codeField.easy.layout(CenterX(-(CGFloat(countOfFields) * size.width + CGFloat(countOfSpacing) * spacing) / 2 + size.width / 2))
         } else {
-            codeField <- Left(spacing).to(fieldsArray.last!)
+            codeField.easy.layout(Left(spacing).to(fieldsArray.last!))
         }
         fieldsArray.append(codeField)
     }

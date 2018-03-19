@@ -30,7 +30,8 @@ open class CMDDropListCell: UITableViewCell {
         bgColorView.clipsToBounds = true
         self.selectedBackgroundView = bgColorView
         self.addSubview(selectedImageView)
-        selectedImageView <- [CenterY(), Right(15)]
+        selectedImageView.easy.layout(CenterY(),
+                                      Right(15))
         selectedImageView.isHidden = true
     }
     
@@ -38,6 +39,9 @@ open class CMDDropListCell: UITableViewCell {
         self.itemView?.removeFromSuperview()
         self.addSubview(view)
         itemView = view
-        view <- [Left(5), Right(35), Top(0), Bottom(0)]
+        view.easy.layout(Left(5),
+                         Right(35),
+                         Top(0),
+                         Bottom(0))
     }
 }

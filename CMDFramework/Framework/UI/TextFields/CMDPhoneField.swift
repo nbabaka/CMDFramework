@@ -46,9 +46,10 @@ open class CMDPhoneField: CMDTextInputWithValidation {
         flagImageView.layer.cornerRadius = 3
         flagImageView.clipsToBounds = true
         self.addSubview(flagImageView)
-        flagImageView <- CenterY()
-        flagImageView <- Left(15)
-        flagImageView <- [Width(41), Height(28)]
+        flagImageView.easy.layout(CenterY(),
+                                  Left(15),
+                                  Width(41),
+                                  Height(28))
         self.setActiveStatus(false)
         setNeedsUpdateConstraints()
         setNeedsDisplay()

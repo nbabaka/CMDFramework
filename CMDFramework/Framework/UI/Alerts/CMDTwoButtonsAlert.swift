@@ -49,8 +49,13 @@ open class CMDTwoButtonsAlert: CMDAlertViewBase {
         rightButton.contentHorizontalAlignment = .right
         self.addSubview(leftButton)
         self.addSubview(rightButton)
-        leftButton <- [Left(40), Bottom(68), Height(22), Width(self.frame.width/2 - 40)]
-        rightButton <- [Size().like(leftButton), Bottom(68), Right(40)]
+        leftButton.easy.layout(Left(40),
+                               Bottom(68),
+                               Height(22),
+                               Width(self.frame.width/2 - 40))
+        rightButton.easy.layout(Size().like(leftButton),
+                                Bottom(68),
+                                Right(40))
         self.onPushLeftButton { self.close(.moveDown) }
     }
 }

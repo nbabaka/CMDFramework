@@ -76,7 +76,9 @@ open class CMDDropList: UIButton {
         self.clipsToBounds = true
         dropImageView = UIImageView(image: dropImage)
         self.addSubview(dropImageView!)
-        dropImageView! <- [CenterY(), Width(dropImage.size.width), Height(dropImage.size.width), Right(25)]
+        dropImageView?.easy.layout(CenterY(),
+                                   Width(dropImage.size.width),
+                                   Height(dropImage.size.width), Right(25))
         dropImageView?.contentMode = .scaleAspectFit
         dropImageView?.isHidden = true
         setNeedsUpdateConstraints()
@@ -89,7 +91,9 @@ open class CMDDropList: UIButton {
         tableBaseView?.backgroundColor = inactiveBackgroundColor
         self.superview?.insertSubview(tableBaseView!, belowSubview: self)
         tableBaseView?.translatesAutoresizingMaskIntoConstraints = false
-        tableBaseView! <- [Top().to(self, .top), Left(0).to(self, .left), Width().like(self)]
+        tableBaseView?.easy.layout(Top().to(self, .top),
+                                   Left(0).to(self, .left),
+                                   Width().like(self))
         tableBaseHeightConstraint = NSLayoutConstraint(item: tableBaseView!, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1.0, constant: 0)
         self.superview?.addConstraint(tableBaseHeightConstraint!)
         tableView = UITableView()
@@ -119,8 +123,11 @@ open class CMDDropList: UIButton {
         guard let tableView = tableView else {
             return
         }
-        tableView.easy_clear()
-        tableView <- [Left(10), Right(10), Top(self.frame.height + 5), Height(height)]
+        tableView.easy.clear()
+        tableView.easy.layout(Left(10),
+                              Right(10),
+                              Top(self.frame.height + 5),
+                              Height(height))
     }
     
     // MARK: Setters
@@ -151,7 +158,9 @@ open class CMDDropList: UIButton {
         mainView?.alpha = 0
         mainView?.setupConstraints()
         self.addSubview(mainView!)
-        mainView! <- [CenterY(), Left(15), Right(10).to(dropImageView!)]
+        mainView?.easy.layout(CenterY(),
+                              Left(15),
+                              Right(10).to(dropImageView!))
         self.layoutIfNeeded()
         UIView.animate(withDuration: 0.1, delay: 0.1, options: .beginFromCurrentState, animations: {
             self.mainView?.alpha = 1

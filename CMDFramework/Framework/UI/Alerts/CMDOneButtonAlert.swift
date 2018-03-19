@@ -22,11 +22,11 @@ open class CMDOneButtonAlert: CMDAlertViewBase {
     private var button = CMDBlueButton()
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
-        button <- CenterX()
-        button <- Bottom(69)
-        button <- Left(50)
-        button <- Right(50)
-        button <- Height(66)
+        button.easy.layout(CenterX(),
+                           Bottom(69),
+                           Left(50),
+                           Right(50),
+                           Height(66))
     }
     
     open func onPushButton(_ block: @escaping CMDOneButtonAlertBlock) {

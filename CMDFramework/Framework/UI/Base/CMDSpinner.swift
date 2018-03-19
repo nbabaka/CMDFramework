@@ -25,7 +25,10 @@ open class CMDSpinner: BaseView {
         imageView = UIImageView(frame: self.bounds)
         imageView.animationImages = spinner.image?.animationImages
         self.addSubview(imageView)
-        imageView <- [Top(0), Leading(0), Trailing(0), Bottom(0)]
+        imageView.easy.layout(Top(0),
+                              Leading(0),
+                              Trailing(0),
+                              Bottom(0))
         imageView.animationDuration = TimeInterval(animationDuration)
         imageView.animationRepeatCount = 0
         self.alpha = 0

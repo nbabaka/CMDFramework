@@ -31,9 +31,9 @@ open class CMDLoadProgress: BaseView {
 
     override open func initSubviews() {
         self.addSubview(spinner)
-        spinner <- [Width(20), Height(20), CenterX(), CenterY(-15)]
+        spinner.easy.layout(Width(20), Height(20), CenterX(), CenterY(-15))
         self.addSubview(label)
-        label <- [Top(5).to(spinner), CenterX()]
+        label.easy.layout(Top(5).to(spinner), CenterX())
         self.needsUpdateConstraints()
         self.isHidden = true
     }

@@ -33,10 +33,15 @@ open class CMDRefreshControl: UIRefreshControl {
         refreshView = UIView(frame: self.frame)
         self.addSubview(refreshView)
         refreshView.clipsToBounds = true
-        refreshView <- [Top(0), Right(0), Left(0), Bottom(0)]
+        refreshView.easy.layout(Top(0),
+                                Right(0),
+                                Left(0),
+                                Bottom(0))
         refreshView.addSubview(spinner)
         spinner.alpha = 1
-        spinner <- [Size(25), Top(0), CenterX()]
+        spinner.easy.layout(Size(25),
+                            Top(0),
+                            CenterX())
         self.needsUpdateConstraints()
     }
     

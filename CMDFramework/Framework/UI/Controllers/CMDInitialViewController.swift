@@ -70,7 +70,9 @@ open class CMDInitialViewController : CMDKeyboardHandledViewController {
         self.backButtonAction = block
         button.addTarget(self, action: #selector(self.handleBackButton(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(button)
-        button <- [Top(30), Left(15), Right(15)]
+        button.easy.layout(Top(30),
+                           Left(15),
+                           Right(15))
         self.view.needsUpdateConstraints()
     }
     

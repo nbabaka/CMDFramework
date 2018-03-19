@@ -25,8 +25,8 @@ open class CMDSimpleDropItem: CMDDropListItem {
     }
     
     override open func setupConstraints() {
-        title?.easy_clear()
-        title! <- [CenterY(), Left(0), Right(0)]
+        title?.easy.clear()
+        title?.easy.layout(CenterY(), Left(0), Right(0))
         self.layoutIfNeeded()
         self.updateConstraintsIfNeeded()
     }

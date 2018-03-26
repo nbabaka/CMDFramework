@@ -1,6 +1,6 @@
 {
   "name": "CMDFramework",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "summary": "CINEMOOD IOS Application Framework",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://cinemood.com",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "ssh://git@stash.dev.cinemood.com:7999/cma/cinemood-ios-framework.git",
-    "tag": "0.6.0"
+    "tag": "0.6.1"
   },
   "platforms": {
     "ios": "10.0"
@@ -56,7 +56,6 @@
     ]
   },
   "requires_arc": true,
-  "vendored_frameworks": "CMDFramework/Dependency/Zendesk/ZDCChatAPI.framework",
   "resource_bundles": {
     "Assets": [
       "CMDFramework/Assets/*.xcassets"

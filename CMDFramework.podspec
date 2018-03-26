@@ -9,7 +9,7 @@ swift_version = 4.0
 
 Pod::Spec.new do |s|
   s.name             = 'CMDFramework'
-  s.version          = '0.6.1'
+  s.version          = '0.6.2'
   s.summary          = 'CINEMOOD IOS Application Framework'
 
 # This description is used to generate tags and improve search results.
@@ -45,7 +45,7 @@ TODO: Add long description of the pod here.
   s.dependency 'LGSideMenuController'
 
   s.requires_arc = true
-  s.vendored_frameworks = 'CMDFramework/Dependency/Zendesk/ZDCChatAPI.framework'
+#  s.vendored_frameworks = 'CMDFramework/Dependency/Zendesk/ZDCChatAPI.framework'
   s.resource_bundles = {
     'Assets' => ['CMDFramework/Assets/*.xcassets'],
     'Localization' => ['CMDFramework/*.lproj/*.strings'],
